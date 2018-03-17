@@ -1,0 +1,153 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{listings}
+\usepackage{courier}
+\usepackage{color}
+\definecolor{light-gray}{gray}{0.95}
+
+\lstset{language=[Sharp]C,
+ showspaces=false,
+ showtabs=false,
+ frame=single,
+ tabsize=2,
+ breaklines=true,
+ numbers=left,
+ showstringspaces=false,
+ breakatwhitespace=true,
+ escapeinside={(*@}{@*)},
+ keywordstyle=\bfseries,
+ basicstyle=\scriptsize\ttfamily,
+}
+
+\newcommand{\code}[1]{{\footnotesize\texttt{#1}}}
+
+\setlength\parindent{0pt} % Indentazione paragrafi
+\setlength{\parskip}{1ex plus 0.5ex minus 0.2ex} % Spaziatura paragrafi
+
+\title{SDN controller clustering \\ \large Computer Networks module - SDN assignment}
+\author{Michele Zanotti}
+\date{Spring term 2018}
+
+\begin{document}
+
+\begin{titlepage}
+\maketitle
+\end{titlepage}
+
+\section*{Learning objectives}
+After finishing this lab activity you will be able to:
+\begin{itemize}
+  \item Understand why clusters of controller are needed in SDN networks
+  \item Understand which are the most common methods to build a cluster of controllers
+  \item Implement a cluster of controllers using mininet
+  \item Test the performance of a SDN network which uses a cluster of controllers
+\end{itemize}
+
+
+\section*{Overview}
+The most popular methods for creating a cluster of controllers are:
+\begin{itemize}
+  \item by using the ovs-vsctl tool
+  \item by python script
+\end{itemize}
+Cluster of controlers can be:
+\begin{itemize}
+  \item physically centralized
+  \item physically distributed
+\end{itemize}
+
+
+\section{Task 1: build a cluster of local controllers}
+In this task we will create a simple network topology with multiple local controllers
+that make up a cluster (which act as a single entity?).
+
+The topology is the simple linear topology shown in figure *** and it will be
+created with a python script using the middle-level API provided by mininet. The following
+script will be used as a template for writing the complete script:
+
+\begin{minipage}{\linewidth}
+\begin{lstlisting}
+#!/usr/bin/python
+from mininet.net import Mininet
+from mininet.node import Controller, OVSSwitch
+from mininet.cli import CLI
+from mininet.log import setLogLevel, info
+
+def multiControllerNet():
+    net = Mininet( controller=Controller, switch=OVSSwitch )
+
+    "" Create hosts ""
+
+
+
+    "" Create switches ""
+
+
+
+    "" Create controllers ""
+
+
+
+    info( "*** Running CLI\n" )
+    CLI( net )
+
+    info( "*** Stopping network\n" )
+    net.stop()
+
+if __name__ == '__main__':
+    setLogLevel( 'info' )  # for CLI output
+    multiControllerNet()
+\end{lstlisting}
+\end{minipage}
+
+\subsection*{Step 1: create a new python script}
+Create a new python script called \emph{controllers-1.py} and paste into it the
+template script shown above. The script simply create a new minine network
+and starts the mininet CLI: we will use it as a start point and in the next steps
+and we will add code for creating hosts, switches, links and controllers.
+
+
+
+\subsection*{Step 2: add host to the network}
+In the host section of the script add the following lines:
+
+ \code{h1 = net.addHost('h3')} \\
+ \code{h1 = net.addHost('h4')} \\
+ \code{h1 = net.addHost('h5')} \\
+ \code{h1 = net.addHost('h6')}
+
+The first line prints to the console that hosts are being created while the others
+lines add four new hosts to the network.
+
+
+
+\subsection*{Step 3: add switches to the network}
+Now we need to add the two switches to the network, therefore we have to add the
+following code to the respective section of the template script:
+
+\code{info( "*** Creating switches\textbackslash n" )} \\
+\code{s1 = net.addSwitch( 's1' )} \\
+\code{s2 = net.addSwitch( 's2' )}
+
+As in the step 2, the first line print to the console a message to inform the user
+that the switches are being created, while the next two lines add two new switches
+to the network.
+
+
+
+\subsection*{Step 4: create links between nodes}
+We have to add the links between hosts and switches and the link between the two
+switches. For doing that we can add the following lines:
+
+\code{net.addLink( h3, s1 )} \\
+\code{net.addLink( h4, s1 )} \\
+\code{net.addLink( h5, s2 )} \\
+\code{net.addLink( h6, s2 )} \\
+\code{net.addLink( s1, s2)}
+
+\subsection*{Step 5: create controllers}
+
+
+
+
+\end{document}
