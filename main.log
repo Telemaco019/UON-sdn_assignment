@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.3.12)  20 MAR 2018 17:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.3.12)  21 MAR 2018 17:07
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -411,7 +411,7 @@ Package caption3 Info: TeX engine: e-TeX on input line 67.
 )
 \c@ContinuedFloat=\count96
 Package caption Info: listings package is loaded.
-) (/media/telemaco/SD/Computer Networks/Assignement/main.aux (/media/telemaco/SD/Computer Networks/Assignement/task-1.aux))
+) (/media/telemaco/SD/Computer Networks/Assignement/main.aux (/media/telemaco/SD/Computer Networks/Assignement/activity-1.aux))
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 41.
@@ -447,29 +447,18 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <14.4> on input line 43.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <7> on input line 43.
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 48.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 53.
  (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 48.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 53.
  [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-\openout2 = `task-1.aux'.
+\openout2 = `activity-1.aux'.
 
- (/media/telemaco/SD/Computer Networks/Assignement/task-1.tex
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 13.
- (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
-File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
-)
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 54.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 54.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 54.
-
+ (/media/telemaco/SD/Computer Networks/Assignement/activity-1.tex
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.49998pt.
@@ -479,26 +468,30 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 [2
 
 ]
-LaTeX Font Info:    Try loading font information for OMS+pcr on input line 68.
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 50.
+ (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
+File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
+) [3] [4]
+LaTeX Font Info:    Try loading font information for OMS+pcr on input line 175.
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omspcr.fd
 File: omspcr.fd 
 )
 LaTeX Font Info:    Font shape `OMS/pcr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 68.
- [3] [4] [5]) [6] (/media/telemaco/SD/Computer Networks/Assignement/main.aux (/media/telemaco/SD/Computer Networks/Assignement/task-1.aux)) ) 
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 175.
+ [5] [6]) [7] (/media/telemaco/SD/Computer Networks/Assignement/main.aux (/media/telemaco/SD/Computer Networks/Assignement/activity-1.aux)) ) 
 Here is how much of TeX's memory you used:
- 4621 strings out of 493029
- 64174 string characters out of 6136234
- 164054 words of memory out of 5000000
- 8140 multiletter control sequences out of 15000+600000
- 10185 words of font info for 36 fonts, out of 8000000 for 9000
+ 4602 strings out of 493029
+ 63991 string characters out of 6136234
+ 152054 words of memory out of 5000000
+ 8128 multiletter control sequences out of 15000+600000
+ 7489 words of font info for 27 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  36i,12n,44p,214b,1701s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb>
-Output written on "/media/telemaco/SD/Computer Networks/Assignement/main.pdf" (6 pages, 92385 bytes).
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb>
+Output written on "/media/telemaco/SD/Computer Networks/Assignement/main.pdf" (7 pages, 85431 bytes).
 PDF statistics:
- 52 PDF objects out of 1000 (max. 8388607)
- 36 compressed objects within 1 object stream
+ 53 PDF objects out of 1000 (max. 8388607)
+ 37 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

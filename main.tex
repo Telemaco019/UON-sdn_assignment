@@ -12,15 +12,15 @@
 \lstset{
  showspaces=false,
  showtabs=false,
- frame=single,
+ frame=none,
  tabsize=2,
  breaklines=true,
- numbers=left,
+ numbers=none,
  showstringspaces=false,
  breakatwhitespace=true,
  escapeinside={(*@}{@*)},
  keywordstyle=\bfseries,
- basicstyle=\scriptsize\ttfamily,
+ basicstyle=\footnotesize\ttfamily,
 }
 
 \newcommand{\code}[1]{{\footnotesize\texttt{#1}}}
@@ -42,29 +42,29 @@
 
 \maketitle
 
-\section*{Learning objectives}
-After finishing this lab activity you will be able to:
-\begin{itemize}
-  \item Understand why clusters of controller are needed in SDN networks
-  \item Understand which are the most common methods to build a cluster of controllers
-  \item Implement a cluster of controllers using mininet
-  \item Test the performance of a SDN network which uses a cluster of controllers
-\end{itemize}
-
 
 \section*{Overview}
-The most popular methods for creating a cluster of controllers are:
+In this paper are proposed four different lab activities meant to teach how to implement
+a cluster of controllers inside Mininet using some of the most common available methods.
+Each activity focuses on a single method and uses as reference the topology
+diagram showed in figure ***. In particular, in each activity the following
+methods will be explained:
 \begin{itemize}
-  \item by using the ovs-vsctl tool
-  \item by python script
-\end{itemize}
-Cluster of controlers can be:
-\begin{itemize}
-  \item physically centralized
-  \item physically distributed
+  \item \textbf{Activity 1}: implement a network with multiple local controllers using a python
+  script and the middle level Mininet API
+  \item \textbf{Activity 2}: implement a network with multiple remote controllers using a python
+  script and the middle level Mininet API
+  \item \textbf{Activity 3}: implement a network with multiple local controllers using a python
+  script and the high level Mininet API
+  \item \textbf{Activity 4}: build a cluster of controllers using the tool
+  \emph{miniedit} provided by Mininet
 \end{itemize}
 
+The paper also includes a fifth lab activity, which is a challange meant
+to let the reader test the knowledge acquired with the execution of the previous
+four activities.
 
-\include{task-1}
+
+\include{activity-1}
 
 \end{document}
