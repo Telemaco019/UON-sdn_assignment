@@ -6,6 +6,8 @@
 \usepackage{color}
 \usepackage{xcolor}
 \usepackage{caption}
+\usepackage{graphicx}
+
 
 \definecolor{light-gray}{gray}{0.95}
 
@@ -47,15 +49,16 @@
 In this paper are proposed four different lab activities meant to teach how to implement
 a cluster of controllers inside Mininet using some of the most common available methods.
 Each activity focuses on a single method and uses as reference the topology
-diagram showed in figure ***. In particular, in each activity the following
-methods will be explained:
+diagram showed in figure \ref{fig:topology-1}.
+
+In particular, in each activity the following methods will be explained:
 \begin{itemize}
   \item \textbf{Activity 1}: implement a network with multiple local controllers using a python
-  script and the middle level Mininet API
+  script and the middle-level Mininet API
   \item \textbf{Activity 2}: implement a network with multiple remote controllers using a python
-  script and the middle level Mininet API
+  script and the middle-level Mininet API
   \item \textbf{Activity 3}: implement a network with multiple local controllers using a python
-  script and the high level Mininet API
+  script and the high-level Mininet API
   \item \textbf{Activity 4}: build a cluster of controllers using the tool
   \emph{miniedit} provided by Mininet
 \end{itemize}
@@ -64,7 +67,18 @@ The paper also includes a fifth lab activity, which is a challange meant
 to let the reader test the knowledge acquired with the execution of the previous
 four activities.
 
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=0.9\linewidth]{img/topology-1.png}
+	\caption{the simple topology that will be used as reference in the first four
+  activities. The topology includes two switches, each one connected to a different
+  controller. The two controllers \emph{c0} and \emph{c1} can be assumed local or
+  remote depending on the lab activity.}
+	\label{fig:topology-1}
+\end{figure}
+
 
 \include{activity-1}
+\include{activity-2}
 
 \end{document}

@@ -7,12 +7,13 @@
 \subsection*{Learning objectives}
 After finishing this lab activity you will be able to:
 \begin{itemize}
-  \item Implement a cluster of local controller inside Mininet using the python
+  \item Implement a cluster of local controllers inside Mininet using the Python
   middle-level Mininet API
   \item Test the network connectivity and the performance of a network which
   includes a cluster of local controllers
   \item Understand the main functions provided by the middle-level Mininet API required
   to implement a cluster of local controllers
+  \item Reflect about the reasons of using more then one controller in SDN networks
 \end{itemize}
 
 
@@ -21,9 +22,9 @@ After finishing this lab activity you will be able to:
 
 
 \subsection*{Scenario}
-In this activity you will implement the simple topology shown in figure *** using
+In this activity you will implement the simple topology shown in figure \ref{fig:topology-1} using
 a Python script and the middle-level API provided by Mininet. The two controllers
-showned in the topology diagram will be local controllers for this activity.
+shown in the topology diagram will be local controllers for this activity.
 The topology has two different switches: each one will be connected to a different
 local controller.
 
@@ -42,13 +43,13 @@ Python programming language is also assumed.
 
 \subsection*{Task 1: write the skeleton of the Python script}
 \subsubsection*{Step 1}
-Create a new python script and edit with the text editor you prefer. If your editing
+Create a new Python script and edit with the text editor you prefer. If your editing
 it inside the Mininet virtual machine, it is suggested to use Vim text editor.
 
 \subsubsection*{Step 2}
 Import the Python classes from the Mininet API:
 \begin{lstlisting}
-#!/usr/bin/python
+#!/usr/bin/Python
 from mininet.net import Mininet
 from mininet.node import Controller, OVSSwitch
 from mininet.cli import CLI
@@ -56,9 +57,9 @@ from mininet.log import setLogLevel, info
 \end{lstlisting}
 
 \subsubsection*{Step 3}
-Make the script executable onyl as a program, set the log level to ``info''
+Make the script executable onyl as a program, set the verbosity level to ``info''
 and call the function \code{multiControllerNet()}, which will be defined in the next
-step:
+step and will be used to create the required topology:
 \begin{lstlisting}
 if __name__ == '__main__':
     setLogLevel( 'info' )
@@ -113,7 +114,7 @@ h4 = net.addHost('h6')
 \end{lstlisting}
 The function used to add the hosts to the network is \code{addHost('name')}, which
 accept as parameter the name of the host that will be created. The hosts names in
-this network therefore will we \code{h3}, \code{h4}, \code{h5} and \code{h6}.
+this network therefore will be \code{h3}, \code{h4}, \code{h5} and \code{h6}.
 
 
 
@@ -151,7 +152,7 @@ info( "*** Creating links \n" )
 \end{lstlisting}
 
 \subsubsection*{Step 2}
-Still inside the body of the function \code{multiControllerNet()}, create four
+Still inside the body of the function \code{multiControllerNet()}, create the
 links between the hosts and the switches and the link between the two switches:
 \begin{lstlisting}
 net.addLink( h3, s1 )
@@ -166,54 +167,95 @@ net.addLink( s1, s2 )
 
 
 
+\subsection*{Task 5: create the controllers}
+\subsubsection*{Step 1}
+Inside the body of the function \code{multiControllerNet()} add the following line
+of code in order to print to the console that reference controllers are being created:
+\begin{lstlisting}
+info( "*** Creating (reference) controllers \n" )
+\end{lstlisting}
+
+\subsubsection*{Step 2}
+Still inside the body of the function \code{multiControllerNet()}, add to the
+Mininet network the two required controller:
+\begin{lstlisting}
+c0 = net.addController( 'c0', port=6633 )
+c1 = net.addController( 'c1', port=6634 )
+\end{lstlisting}
+
+The function use to create the controllers is \code{addController}, which accept
+as parameters the name of the controller which will be created and the TCP port that
+will be used by the switches for connecting to the controller.
 
 
-\subsection*{Step 5: create controllers} \label{sec:step-5}
-In this step we are going to create two local SDN controllers. The code we have to
-add to the script is the following:
 
-\code{info( "*** Creating (reference) controllers\textbackslash n" )} \\
-\code{c1 = net.addController( 'c1', port=6633 )} \\
-\code{c2 = net.addController( 'c2', port=6634 )}
 
-Note that we specified a different TCP port for each controller (the controllers
-will listen on the specified port for switches that want to set up a connection).
 
-\textbf{Why did we specify a different port for each controller?}
 
-\hrulefill
 
-\hrulefill
+\subsection*{Task 6: start the mininet network}
+\subsubsection*{Step 1}
+Append to the body the function \code{multiControllerNet()} the following line
+of code for printing to the console that the network is being started:
+\begin{lstlisting}
+info( "*** Starting network \n" )
+\end{lstlisting}
+
+\subsubsection*{Step 2}
+Build the Mininet network:
+\begin{lstlisting}
+net.build()
+\end{lstlisting}
+
+\subsubsection*{Step 3}
+Start the controllers:
+\begin{lstlisting}
+c0.start()
+c1.start()
+\end{lstlisting}
+
+\subsubsection*{Step 4}
+Start the switches, specifying for each switch the controller to wich connect:
+\begin{lstlisting}
+s1.start( [ c0 ] )
+s2.start( [ c1 ] )
+\end{lstlisting}
+
+\subsubsection*{Step 5}
+Start the Mininet CLI:
+\begin{lstlisting}
+info( "*** Running CLI\n" )
+CLI( net )
+\end{lstlisting}
+
+\subsubsection*{Step 6}
+Stop the network so that after the user exits the Mininet CLI the network is
+stopped:
+\begin{lstlisting}
+info( "*** Stopping network\n" )
+net.stop()
+\end{lstlisting}
+
 % Because each swtich has to setup one TCP connection to each controller and
 % it's not possible having more than one TCP connection on the same port, so
 % specifying two different ports makes it possible to connect one single switch
 % to multiple controllers.
 
 
-\subsection*{Step 6: start the network}
-After adding all the required nodes to the network we can finally start it. In order
-to do that, we have to build the mininet network and start the controllers and the
-switches:
 
-\code{info( "*** Starting network\textbackslash n" )} \\
-\code{net.build()} \\
-\code{c1.start()} \\
-\code{c2.start()} \\
-\code{s1.start( [ c1 ] )} \\
-\code{s2.start( [ c2 ] )}
+\subsection*{Task 7: execute the script and test the network}
+After finishing the task 6 the script for implementing the required topology is
+completed. The full script is shown in listing \ref{lst:activity-1-script} at the
+bottom of this activity.
 
-In the last two lines of code we used the function start() to start the two switches,
-passing as parameter
+\subsubsection*{Step 1}
+Execute the script as root: \\
+\code{\$ sudo python controllers1.py}
 
-After this step, the python script required to build the topology for the task one
-is completed. The full script is shown in listing \ref{lst:task-1-complete-script}.
-
-
-
-\subsection{Step 7: test network connectivity and performance}
-The final step is execute the script and test the created topology: try to verify
-the network connectivity between all hosts and the bandwidth between \code{h3} and \code{h6}.
-Write in the lines below the commands you used and the results you obtained.
+\subsubsection*{Step 2}
+Test the created topology: verify the network connectivity between all hosts
+and the bandwidth between \code{h3} and \code{h6}. Write in the lines below the
+commands you used and the results you obtained.
 
 \hrulefill
 
@@ -221,12 +263,69 @@ Write in the lines below the commands you used and the results you obtained.
 
 \hrulefill
 
-\begin{lstlisting}[label=lst:task-1-complete-script, caption=Task 1 complete python script]
-#!/usr/bin/python
+\hrulefill
+
+
+
+
+
+\subsection*{Task 8: reflection}
+\subsubsection*{1 - What are the advantages of having more controllers instead of one
+single controller which serves all the switches of the network?}
+\hrulefill
+
+\hrulefill
+
+\hrulefill
+
+\hrulefill
+
+\subsubsection*{2 - Would the fault tolerance of the netowrk shown in figure
+\ref{fig:topology-1} change if we used only one controller instead of two?}
+\hrulefill
+
+\hrulefill
+
+\hrulefill
+
+\hrulefill
+
+\subsubsection*{3 - How could we improve the fault tolerance of the netowrk shown
+in figure \ref{fig:topology-1}?} % Each switch connected to both controllers, each controller
+% could be a distributed controller
+\hrulefill
+
+\hrulefill
+
+\hrulefill
+
+\hrulefill
+
+\lstset{
+ showspaces=false,
+ showtabs=false,
+ frame=single,
+ tabsize=2,
+ breaklines=true,
+ numbers=left,
+ showstringspaces=false,
+ breakatwhitespace=true,
+ escapeinside={(*@}{@*)},
+ keywordstyle=\bfseries,
+ basicstyle=\scriptsize\ttfamily,
+}
+
+\begin{minipage}{\linewidth}
+\begin{lstlisting}[label=lst:activity-1-script, caption=complete Python script required for Activity 1]
+#!/usr/bin/Python
 from mininet.net import Mininet
 from mininet.node import Controller, OVSSwitch
 from mininet.cli import CLI
 from mininet.log import setLogLevel, info
+
+if __name__ == '__main__':
+    setLogLevel( 'info' )
+    multiControllerNet()
 
 def multiControllerNet():
     net = Mininet( controller=Controller, switch=OVSSwitch )
@@ -249,23 +348,20 @@ def multiControllerNet():
     net.addLink( s1, s2 )
 
     info( "*** Creating (reference) controllers\n" )
-    c1 = net.addController( 'c1', port=6633 )
-    c2 = net.addController( 'c2', port=6634 )
+    c0 = net.addController( 'c0', port=6633 )
+    c1 = net.addController( 'c1', port=6634 )
 
     info( "*** Starting network\n" )
     net.build()
+    c0.start()
     c1.start()
-    c2.start()
-    s1.start( [ c1 ] )
-    s2.start( [ c2 ] )
+    s1.start( [ c0 ] )
+    s2.start( [ c1 ] )
 
     info( "*** Running CLI\n" )
     CLI( net )
 
     info( "*** Stopping network\n" )
     net.stop()
-
-if __name__ == '__main__':
-    setLogLevel( 'info' )  # for CLI output
-    multiControllerNet()
 \end{lstlisting}
+\end{minipage}
