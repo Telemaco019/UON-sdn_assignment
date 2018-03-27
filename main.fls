@@ -92,6 +92,8 @@ INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr17.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr12.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmmi12.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm
+OUTPUT /media/telemaco/SD/Computer Networks/Assignement/main.pdf
+INPUT /var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr17.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
 INPUT /usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
@@ -99,15 +101,13 @@ INPUT /usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmti12.tfm
-INPUT /media/telemaco/SD/Computer Networks/Assignement/img/topology-1.png
-INPUT /media/telemaco/SD/Computer Networks/Assignement/img/topology-1.png
-OUTPUT /media/telemaco/SD/Computer Networks/Assignement/main.pdf
-INPUT /media/telemaco/SD/Computer Networks/Assignement/img/topology-1.png
-INPUT /var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map
 OUTPUT /media/telemaco/SD/Computer Networks/Assignement/activity-1.aux
 INPUT /media/telemaco/SD/Computer Networks/Assignement/activity-1.tex
 INPUT /media/telemaco/SD/Computer Networks/Assignement/activity-1.tex
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
+INPUT /media/telemaco/SD/Computer Networks/Assignement/img/topology-1.png
+INPUT /media/telemaco/SD/Computer Networks/Assignement/img/topology-1.png
+INPUT /media/telemaco/SD/Computer Networks/Assignement/img/topology-1.png
 INPUT /usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 INPUT /usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/courier/pcrr7t.tfm
@@ -126,6 +126,10 @@ INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/courier/pcrr8r.tfm
 OUTPUT /media/telemaco/SD/Computer Networks/Assignement/activity-2.aux
 INPUT /media/telemaco/SD/Computer Networks/Assignement/activity-2.tex
 INPUT /media/telemaco/SD/Computer Networks/Assignement/activity-2.tex
+INPUT /media/telemaco/SD/Computer Networks/Assignement/img/topology-2.png
+INPUT /media/telemaco/SD/Computer Networks/Assignement/img/topology-2.png
+INPUT /media/telemaco/SD/Computer Networks/Assignement/img/topology-2.png
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmti10.tfm
 INPUT /media/telemaco/SD/Computer Networks/Assignement/main.aux
 INPUT /media/telemaco/SD/Computer Networks/Assignement/activity-1.aux
 INPUT /media/telemaco/SD/Computer Networks/Assignement/activity-1.aux
@@ -133,9 +137,11 @@ INPUT /media/telemaco/SD/Computer Networks/Assignement/activity-2.aux
 INPUT /media/telemaco/SD/Computer Networks/Assignement/activity-2.aux
 INPUT /usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
+INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb
+INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb

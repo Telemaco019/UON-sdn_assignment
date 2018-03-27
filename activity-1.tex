@@ -1,5 +1,16 @@
 \section*{Lab activity 1}
 
+\subsection*{Topology diagram}
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=0.8\linewidth]{img/topology-1.png}
+	\caption{the topology that will be implemented during this lab activity.
+  It is a simple linear topology with two switches connected to each other,
+  each one connected to two hosts. Each switch is linked to a different
+  SDN controller.}
+	\label{fig:topology-1}
+\end{figure}
+
 
 
 
@@ -8,12 +19,14 @@
 After finishing this lab activity you will be able to:
 \begin{itemize}
   \item Implement a cluster of local controllers inside Mininet using the Python
-  middle-level Mininet API
+  middle-level Mininet API.
   \item Test the network connectivity and the performance of a network which
-  includes a cluster of local controllers
+  includes a cluster of local controllers.
   \item Understand the main functions provided by the middle-level Mininet API required
-  to implement a cluster of local controllers
-  \item Reflect about the reasons of using more then one controller in SDN networks
+  to implement a cluster of local controllers.
+	\item Understand how to set performance parameters when implementing a network
+	using a Python script and the middle-level Mininet API
+  \item Reflect about the reasons of using more then one controller in SDN networks.
 \end{itemize}
 
 
@@ -24,7 +37,7 @@ After finishing this lab activity you will be able to:
 \subsection*{Scenario}
 In this activity you will implement the simple topology shown in figure \ref{fig:topology-1} using
 a Python script and the middle-level API provided by Mininet. The two controllers
-shown in the topology diagram will be local controllers for this activity.
+shown in the topology diagram will be assumed local controllers.
 The topology has two different switches: each one will be connected to a different
 local controller.
 
@@ -47,7 +60,7 @@ Create a new Python script and edit with the text editor you prefer. If your edi
 it inside the Mininet virtual machine, it is suggested to use Vim text editor.
 
 \subsubsection*{Step 2}
-Import the Python classes from the Mininet API:
+Import the required Python classes from the Mininet API:
 \begin{lstlisting}
 #!/usr/bin/Python
 from mininet.net import Mininet
@@ -57,22 +70,12 @@ from mininet.log import setLogLevel, info
 \end{lstlisting}
 
 \subsubsection*{Step 3}
-Make the script executable onyl as a program, set the verbosity level to ``info''
-and call the function \code{multiControllerNet()}, which will be defined in the next
-step and will be used to create the required topology:
-\begin{lstlisting}
-if __name__ == '__main__':
-    setLogLevel( 'info' )
-    multiControllerNet()
-\end{lstlisting}
-
-\subsubsection*{Step 4}
 Define the function that will be used to create the topology:
 \begin{lstlisting}
 def multiControllerNet():
 \end{lstlisting}
 
-\subsubsection*{Step 6}
+\subsubsection*{Step 4}
 Inside the body of the function \code{multiControllerNet()} create a new Mininet
 network:
 \begin{lstlisting}
@@ -85,6 +88,17 @@ the Stanford/OpenFlow reference controllers and Open vSwitch switches will be us
 in the network we are goind to create. Note that these two classes are
 the default parameters in the Mininet constructor, so it is not really necessary
 to specify them.
+
+\subsubsection*{Step 6}
+Make the script executable only as a program, set the CLI verbosity level to ``info''
+and call the function \code{multiControllerNet()}:
+\begin{lstlisting}
+if __name__ == '__main__':
+    setLogLevel( 'info' )
+    multiControllerNet()
+\end{lstlisting}
+Note that the lines of code above must be placed after the function \code{multiControllerNet()}
+outside its body.
 
 \subsubsection*{Step 7}
 Save the text file as ``\emph{controllers-1.py}'' in your custom directory inside
@@ -153,15 +167,21 @@ info( "*** Creating links \n" )
 
 \subsubsection*{Step 2}
 Still inside the body of the function \code{multiControllerNet()}, create the
-links between the hosts and the switches and the link between the two switches:
+links between the hosts and the switches and the link between the two switches.
+For creating the links, use the function \code{addLink} specifying the bandwidth
+and the delay for each link:
 \begin{lstlisting}
-net.addLink( h3, s1 )
-net.addLink( h4, s1 )
-net.addLink( h5, s2 )
-net.addLink( h6, s2 )
-net.addLink( s1, s2 )
+net.addLink( h3, s1, bw=10, delay='5ms' )
+net.addLink( h4, s1, bw=10, delay='5ms' )
+net.addLink( h5, s2, bw=10, delay='5ms' )
+net.addLink( h6, s2, bw=10, delay='5ms' )
+net.addLink( s1, s2, bw=20, delay='2ms' )
 \end{lstlisting}
-
+Note that the bandwidth specified with the parameter \code{bw} is expressed in
+Mbit/s, while the delay specified with the parameter \code{delay} is expresed
+in milliseconds since we used the string ``ms'' (it is also possible to use
+the strings ``us'' and ``s'' in order to express the delay in microseconds and
+seconds).
 
 
 
@@ -253,9 +273,8 @@ Execute the script as root: \\
 \code{\$ sudo python controllers1.py}
 
 \subsubsection*{Step 2}
-Test the created topology: verify the network connectivity between all hosts
-and the bandwidth between \code{h3} and \code{h6}. Write in the lines below the
-commands you used and the results you obtained.
+Test the created topology: verify the network connectivity between all hosts.
+Write in the lines below the commands you used and the results you obtained.
 
 \hrulefill
 
@@ -265,6 +284,18 @@ commands you used and the results you obtained.
 
 \hrulefill
 
+\subsection*{Step 3}
+Verify that the bandwidth and the delay of each link comply with the values
+specified in the topology diagram shown in figure \ref{fig:topology-1}.
+Write in the lines below the commands you used and the results you obtained.
+
+\hrulefill
+
+\hrulefill
+
+\hrulefill
+
+\hrulefill
 
 
 
@@ -323,10 +354,6 @@ from mininet.node import Controller, OVSSwitch
 from mininet.cli import CLI
 from mininet.log import setLogLevel, info
 
-if __name__ == '__main__':
-    setLogLevel( 'info' )
-    multiControllerNet()
-
 def multiControllerNet():
     net = Mininet( controller=Controller, switch=OVSSwitch )
 
@@ -341,11 +368,11 @@ def multiControllerNet():
     s2 = net.addSwitch( 's2' )
 
     info( "*** Creating links\n" )
-    net.addLink( h3, s1 )
-    net.addLink( h4, s1 )
-    net.addLink( h5, s2 )
-    net.addLink( h6, s2 )
-    net.addLink( s1, s2 )
+		net.addLink( h3, s1, bw=10, delay='5ms' )
+		net.addLink( h4, s1, bw=10, delay='5ms' )
+		net.addLink( h5, s2, bw=10, delay='5ms' )
+		net.addLink( h6, s2, bw=10, delay='5ms' )
+		net.addLink( s1, s2, bw=20, delay='2ms' )
 
     info( "*** Creating (reference) controllers\n" )
     c0 = net.addController( 'c0', port=6633 )
@@ -363,5 +390,9 @@ def multiControllerNet():
 
     info( "*** Stopping network\n" )
     net.stop()
+
+if __name__ == '__main__':
+    setLogLevel( 'info' )
+    multiControllerNet()
 \end{lstlisting}
 \end{minipage}

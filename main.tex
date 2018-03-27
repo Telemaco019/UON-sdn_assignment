@@ -43,42 +43,63 @@
 \begin{document}
 
 \maketitle
-
+\newpage
 
 \section*{Overview}
 In this paper are proposed four different lab activities meant to teach how to implement
 a cluster of controllers inside Mininet using some of the most common available methods.
-Each activity focuses on a single method and uses as reference the topology
-diagram showed in figure \ref{fig:topology-1}.
+Each activity focuses on a single method and use it to implement a certain topology.
 
 In particular, in each activity the following methods will be explained:
 \begin{itemize}
   \item \textbf{Activity 1}: implement a network with multiple local controllers using a python
-  script and the middle-level Mininet API
-  \item \textbf{Activity 2}: implement a network with multiple remote controllers using a python
-  script and the middle-level Mininet API
-  \item \textbf{Activity 3}: implement a network with multiple local controllers using a python
-  script and the high-level Mininet API
-  \item \textbf{Activity 4}: build a cluster of controllers using the tool
-  \emph{miniedit} provided by Mininet
+  script and the middle-level Mininet API.
+  \item \textbf{Activity 2}: implement a network with multiple local controllers using a python
+  script and the topology classes provided by the Mininet high-level API.
+  \item \textbf{Activity 3}: implement a network with multiple controllers using
+  \emph{miniedit}, a tool provided by Mininet.
 \end{itemize}
 
-The paper also includes a fifth lab activity, which is a challange meant
+The paper also includes a fourth lab activity (\textbf{Activity 4}), which is a challange meant
 to let the reader test the knowledge acquired with the execution of the previous
 four activities.
 
-\begin{figure}[htb]
-	\centering
-	\includegraphics[width=0.9\linewidth]{img/topology-1.png}
-	\caption{the simple topology that will be used as reference in the first four
-  activities. The topology includes two switches, each one connected to a different
-  controller. The two controllers \emph{c0} and \emph{c1} can be assumed local or
-  remote depending on the lab activity.}
-	\label{fig:topology-1}
-\end{figure}
+It's important to point out that all the the proposed activities are meant to be
+only an introduction to SDN controller clustering, therefore this paper won't cover
+some of the aspects that has to be considered when implementing a cluster of
+controllers in a real-world context, such as load balancing and communication
+between controllers. More information about these topics can be found in
+\cite{ref-1}, \cite{ref-2} and [].
 
+The communication between different controllers can however be automatically managed
+by Mininet, the network emulator used in this paper activities. When in fact a
+network with multiple local controllers is implemented inside the emulator, all
+the local controllers are executed inside the kernel space on a single machine
+and therefore they can communicate with each other without an external
+communication mechanism being necessary. [ REFERENCE ???]
 
 \include{activity-1}
 \include{activity-2}
+
+
+\begin{thebibliography}{99}
+  \footnotesize
+
+  \bibitem{ref-1}
+  N. T. Hai and D. S. Kim,
+  ``Efficient load balancing for multi-controller in SDN-based mission-critical networks'',
+  \textit{2016 IEEE 14th International Conference on Industrial Informatics (INDIN)},
+  Poitiers,
+  2016,
+  pp. 420-425.
+
+  \bibitem{ref-2}
+  K. Phemius, M. Bouet and J. Leguay,
+  ``DISCO: Distributed SDN controllers in a multi-domain environment'',
+  \textit{2014 IEEE Network Operations and Management Symposium (NOMS)},
+  Krakow,
+  2014,
+  pp. 1-2.
+\end{thebibliography}
 
 \end{document}
