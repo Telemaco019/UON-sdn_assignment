@@ -28,12 +28,15 @@
 \subsection*{Learning objectives}
 After finishing this lab activity you will be able to:
 \begin{itemize}
-  \item Implement a cluster of local controllers inside Mininet using the topology
-  classes provided by the Mininet high-level API.
-  \item Define a custom switch class and use it to implement a network with
-  multiple controllers.
+  \item Create a custom switch class that extends the OVSSwitch class provided
+  by the Mininet Python API.
+  \item Implement a cluster of local controllers inside Mininet using a custom
+  switch class and the topology classes provided by the Mininet high-level API.
   \item Reflect on the reasons for implementing a cluster of local controllers
-  using the Mininet high-level API instead of the way shown in Activity 1.
+  using the topology templates provided by the high-level API instead of
+  using the way shown in Activity 1.
+  \item Test the network connectivity and the performance of a network with multiple
+  local controllers.
 \end{itemize}
 
 
@@ -42,20 +45,27 @@ After finishing this lab activity you will be able to:
 
 
 \subsection*{Scenario}
-In this activity you will implement the simple topology shown in figure \ref{fig:topology-1} using
-a Python script and the middle-level API provided by Mininet. The two controllers
-shown in the topology diagram will be local controllers for this activity.
-The topology has two different switches: each one will be connected to a different
-local controller.
+In this activity you will implement the topology shown in figure \ref{fig:topology-2} using
+a Python script and the classes provided by the high-level Mininet API, which
+represent topology templates. In order to use these classes for creating a network
+with multiple contollers, you will have to define a new switch class that extends
+the OVSSwitch class normally used.
 
-Begin by creating a new Python script, then import Mininet classes required for
-this activity and define the function that will be used to create the topology.
-Inside the body of this function, create a new Mininet netowrk and add to it the
-required hosts, switches, links and controllers. After writing the script, execute
-it to create the network and test its connectivity and performance.
+Begin by creating a new Python script, then import the Mininet classes required for
+this activity. Create all the controllers required by the topology and define
+the custom switch class which extends the class \code{OVSSwitch}. Define a new funcion for creating
+the network and inside its body use one of the topology templates provided
+by the Mininet API to implement the required topology.
+After writing the script, execute it and test the network connectivity and its
+performance.
 
-This lab activity assumes you are proficient in [...]. A basic knowledge of the
-Python programming language is also assumed.
+This lab activity assumes that:
+\begin{itemize}
+  \item you are proficient in SDN networks
+  \item you are proficient in Mininet network emulator
+  \item you have a basic knowledge of the Python programming language
+  \item you have completed Activity 1.
+\end{itemize}
 
 
 
@@ -64,7 +74,7 @@ Python programming language is also assumed.
 
 \subsection*{Task 1: create the controllers}
 \subsubsection*{Step 1}
-Create a new Python script and edit with the text editor you prefer. If your editing
+Create a new Python script and edit with the text editor you prefer. If you're editing
 it inside the Mininet virtual machine, it is suggested to use Vim text editor.
 
 \subsubsection*{Step 2}
@@ -131,7 +141,7 @@ the relative controller, according to the map \code{cmap}.
 
 
 
-\subsection*{Task 3: create a function that creates the topology}
+\subsection*{Task 3: define a function that creates the topology}
 \subsubsection*{Step 1}
 Define a new function called ``multiControllerNet'':
 \begin{lstlisting}
