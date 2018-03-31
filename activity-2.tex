@@ -1,4 +1,5 @@
 \lstset{
+ upquote=true,
  showspaces=false,
  showtabs=false,
  frame=none,
@@ -30,13 +31,15 @@ After finishing this lab activity you will be able to:
 \begin{itemize}
   \item Create a custom switch class that extends the OVSSwitch class provided
   by the Mininet Python API.
-  \item Implement a cluster of local controllers inside Mininet using a custom
+  \item Implement a cluster of local/remote controllers inside Mininet using a custom
   switch class and the topology classes provided by the Mininet high-level API.
-  \item Reflect on the reasons for implementing a cluster of local controllers
-  using the topology templates provided by the high-level API instead of
-  using the way shown in Activity 1.
+  \item Implement more complex topologies with multiple controllers using a
+  few lines of Python code.
+  \item Reflect upon the method used in this activity for implementing a cluster of controllers
+  and compare it with the method shown in Activity 1, focusing on the advantages
+  and disadvantages of each method.
   \item Test the network connectivity and the performance of a network with multiple
-  local controllers.
+  controllers.
 \end{itemize}
 
 
@@ -51,22 +54,26 @@ represent topology templates. In order to use these classes for creating a netwo
 with multiple contollers, you will have to define a new switch class that extends
 the OVSSwitch class normally used.
 
-Begin by creating a new Python script, then import the Mininet classes required for
-this activity. Create all the controllers required by the topology and define
-the custom switch class which extends the class \code{OVSSwitch}. Define a new funcion for creating
+Begin by creating a new Python script and importing the required Mininet classes.
+Create the controllers present in the topology and define
+a custom switch class which extends the class \code{OVSSwitch}. Define a funcion for creating
 the network and inside its body use one of the topology templates provided
 by the Mininet API to implement the required topology.
 After writing the script, execute it and test the network connectivity and its
-performance.
+performance. To conclude, answer the questions proposed in the last task.
 
 This lab activity assumes that:
 \begin{itemize}
   \item you are proficient in SDN networks
   \item you are proficient in Mininet network emulator
   \item you have a basic knowledge of the Python programming language
-  \item you have completed Activity 1.
+  \item you have already completed Activity 1.
 \end{itemize}
 
+The activity is inspired to the script \textit{controllers.py} \cite{ref-5} included in the
+examples provided by Mininet, which can therefore be used as
+an additional example of how a topology with multiple controllers can be implemented
+inside Mininet using a Python script and defining a custom switch class.
 
 
 
@@ -189,7 +196,8 @@ net.stop()
 
 
 
-\subsection*{Task 4: finalize the script}
+\subsection*{Task 4: finalize the script and save it}
+\subsubsection*{Step 1}
 Make the script executable only as a program and set the CLI verbosity level
 to ``info'':
 \begin{lstlisting}
@@ -197,6 +205,10 @@ if __name__ == '__main__':
     setLogLevel( 'info' )
     multiControllerNet()
 \end{lstlisting}
+
+\subsubsection*{Step 2}
+Save the text file as ``\emph{activity-2.py}'' in your custom directory inside
+the mininet virtual machine.
 
 
 
@@ -208,8 +220,83 @@ After finishing the task 4 the script for implementing the required topology is
 completed. The full script is shown in listing \ref{lst:activity-2-script} at the
 bottom of this activity.
 
+\subsubsection*{Step 1}
+Execute the script as root: \\
+\code{\$ sudo python activity-2.py}
+
+\subsubsection*{Step 2}
+Test the created topology: verify the network connectivity between all hosts.
+Write in the lines below the commands you used and the results you obtained.
+
+\hrulefill
+
+\hrulefill
+
+\hrulefill
+
+\hrulefill
+
+\subsubsection*{Step 3}
+Verify the bandwidth and the delay between the hosts \code{h1s1} and \code{h3s4}
+Write in the lines below the commands you used and the results you obtained.
+
+\hrulefill
+
+\hrulefill
+
+\hrulefill
+
+\hrulefill
+
+
+
+
+
+\subsection*{Task 6: reflection}
+\subsubsection*{1 - In this activity you implemented a network with multiple
+controllers using a custom switch class and the high-level API. Which are
+the advantages of using this method insted of the one used in Activity 1? What
+about the disadvantages?}
+\hrulefill
+
+\hrulefill
+
+\hrulefill
+
+\hrulefill
+
+
+\subsubsection*{2 - In this activity the topology shown in figure \ref{fig:topology-2}
+was implemented assuming that all the controllers were local controllers. How would
+you have to change the Python script you created in this activity in order
+to use remote controllers instead of local ones?}
+\hrulefill
+
+\hrulefill
+
+\hrulefill
+
+\hrulefill
+
+
+\subsubsection*{3 - Try to modify the script you realized in order to have only
+two controllers instead of four, each one linked to two different switches. Note
+that each switch must be linked to a controller. }
+\hrulefill
+
+\hrulefill
+
+\hrulefill
+
+\hrulefill
+
+
+
+
+
 
 \lstset{
+ upquote=true,
  showspaces=false,
  showtabs=false,
  frame=single,

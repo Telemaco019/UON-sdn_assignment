@@ -7,11 +7,14 @@
 \usepackage{xcolor}
 \usepackage{caption}
 \usepackage{graphicx}
-
+\usepackage{url}
+\usepackage[titletoc]{appendix}
+\usepackage{textcomp}
 
 \definecolor{light-gray}{gray}{0.95}
 
 \lstset{
+ upquote=true,
  showspaces=false,
  showtabs=false,
  frame=none,
@@ -48,11 +51,11 @@
 \section*{Overview}
 In this paper are proposed four different lab activities meant to teach how to implement
 a cluster of controllers inside Mininet using some of the most common available methods.
-Each activity focuses on a single method and use it to implement a certain topology.
+Each activity focuses on a single method and use it to implement a given topology.
 
 In particular, in each activity the following methods will be explained:
 \begin{itemize}
-  \item \textbf{Activity 1}: implement a network with multiple local controllers using a python
+  \item \textbf{Activity 1}: implement a network with multiple controllers using a python
   script and the middle-level Mininet API.
   \item \textbf{Activity 2}: implement a network with multiple local controllers using a python
   script, a custom switch class and the topology classes provided by the Mininet high-level API.
@@ -60,9 +63,13 @@ In particular, in each activity the following methods will be explained:
   \emph{miniedit}, a tool provided by Mininet.
 \end{itemize}
 
-The paper also includes a fourth lab activity (\textbf{Activity 4}), which is a challange meant
+The paper also includes a fourth lab activity (\textbf{Activity 4}), which is a conclusive challange meant
 to let the reader test the knowledge acquired with the execution of the previous
-four activities.
+four activities. Each activity moreover contains some final questions meant to make the reader
+reflect about what he did during the activity and possibly make him try to
+bring minor changes to the implemented topology. The solution
+for the activity 4 and the answers for the questions included in the previous activities
+can be found in appendix A.
 
 It's important to point out that all the the proposed activities are meant to be
 only an introduction to SDN controller clustering, therefore this paper won't cover
@@ -70,7 +77,6 @@ some of the aspects that has to be considered when implementing a cluster of
 controllers in a real-world context, such as load balancing and communication
 between controllers. More information about these topics can be found in
 \cite{ref-1}, \cite{ref-2} and [].
-
 The communication between different controllers can however be automatically managed
 by Mininet, the network emulator used in this paper activities. When in fact a
 network with multiple local controllers is implemented inside the emulator, all
@@ -80,7 +86,7 @@ communication mechanism being necessary. [ REFERENCE ???]
 
 \include{activity-1}
 \include{activity-2}
-
+\include{appendix-A}
 
 \begin{thebibliography}{99}
   \footnotesize
@@ -105,6 +111,18 @@ communication mechanism being necessary. [ REFERENCE ???]
   GitHub. (2016).
   \textit{mininet}. [online].
   Available at: \url{https://github.com/mininet/mininet/blob/master/examples/controllers2.py}
+  [Accessed 28 Mar. 2018].
+
+  \bibitem{ref-4}
+  GitHub. (2014).
+  \textit{Reg:Mininet with multiple external Remote controllers - Issue \#319}. [online].
+  Available at: \url{https://github.com/mininet/mininet/issues/319}
+  [Accessed 30 Mar. 2018]
+
+  \bibitem{ref-5}
+  GitHub. (2016).
+  \textit{mininet}. [online].
+  Available at: \url{https://github.com/mininet/mininet/blob/master/examples/controllers.py}
   [Accessed 28 Mar. 2018].
 \end{thebibliography}
 

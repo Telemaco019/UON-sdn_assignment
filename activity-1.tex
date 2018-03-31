@@ -18,12 +18,13 @@
 \subsection*{Learning objectives}
 After finishing this lab activity you will be able to:
 \begin{itemize}
-  \item Implement a cluster of local controllers inside Mininet using the Python
+  \item Implement a cluster of local/remote controllers inside Mininet using the Python
   middle-level Mininet API.
-  \item Test the network connectivity and the performance of a network which
-  includes a cluster of local controllers.
+  \item Test the network connectivity of a network which
+  includes a cluster of controllers and verify that its performance meets
+	the requirements.
   \item Understand the main functions provided by the middle-level Mininet API required
-  to implement a cluster of local controllers.
+  to implement a cluster of controllers.
 	\item Understand how to set performance parameters when implementing a network
 	using a Python script and the middle-level Mininet API
   \item Reflect about the reasons of using more then one controller in SDN networks.
@@ -42,20 +43,24 @@ this activity and define the function that will be used to create the topology.
 Inside the body of this function, create a new Mininet netowrk and add to it the
 required hosts, switches, links and controllers. After writing the script, execute
 it to create the network, test its connectivity and verify that the performance
-meet the requirements. To conclude, answer the questions proposed in the task 8.
+meet the requirements. To conclude, answer the questions proposed in the last task.
 
 This lab activity assumes you are proficient in SDN networks and Mininet network
-emulator. A basic knowledge of the Python programming language is also assumed.
+emulator %(how to create a basic topology, python API, how to connect a switch to
+%a remote controller,).
+A basic knowledge of the Python programming language is also assumed.
 
-The activity was designed taking inspiration from the script \cite{ref-3} included in the 
-examples available on GitHub provided by Mininet.
+The activity is inspired to the script \textit{controllers2.py} \cite{ref-3} included in the
+examples provided by Mininet, which can therefore be used as
+an additional example of how network with multiple controllers can be implemented
+inside Mininet using a Python script and the middle-level API.
 
 
 
 
 \subsection*{Task 1: write the skeleton of the Python script}
 \subsubsection*{Step 1}
-Create a new Python script and edit with the text editor you prefer. If you're editing
+Create a new Python script and edit it with the text editor you prefer. If you're editing
 it inside the Mininet virtual machine, it is suggested to use Vim text editor.
 
 \subsubsection*{Step 2}
@@ -100,7 +105,7 @@ Note that the lines of code above must be placed after the function \code{multiC
 outside its body.
 
 \subsubsection*{Step 7}
-Save the text file as ``\emph{controllers-1.py}'' in your custom directory inside
+Save the text file as ``\emph{activity-1.py}'' in your custom directory inside
 the mininet virtual machine.
 
 
@@ -255,6 +260,9 @@ info( "*** Stopping network\n" )
 net.stop()
 \end{lstlisting}
 
+\subsubsection*{Step 7}
+Save the file and exit the text editor.
+
 % Because each swtich has to setup one TCP connection to each controller and
 % it's not possible having more than one TCP connection on the same port, so
 % specifying two different ports makes it possible to connect one single switch
@@ -269,7 +277,7 @@ bottom of this activity.
 
 \subsubsection*{Step 1}
 Execute the script as root: \\
-\code{\$ sudo python controllers1.py}
+\code{\$ sudo python activity-1.py}
 
 \subsubsection*{Step 2}
 Test the created topology: verify the network connectivity between all hosts.
@@ -311,7 +319,8 @@ single controller which serves all the switches of the network?}
 \hrulefill
 
 \subsubsection*{2 - Would the fault tolerance of the netowrk shown in figure
-\ref{fig:topology-1} change if we used only one controller instead of two?}
+\ref{fig:topology-1} change if we used only one controller (linked to both the
+switches) instead of two?}
 \hrulefill
 
 \hrulefill
@@ -320,8 +329,25 @@ single controller which serves all the switches of the network?}
 
 \hrulefill
 
-\subsubsection*{3 - How could we improve the fault tolerance of the netowrk shown
-in figure \ref{fig:topology-1}?} % Each switch connected to both controllers, each controller
+
+
+\subsubsection*{3 - In this activity the topology shown in figure \ref{fig:topology-1}
+was implemented assuming that the two controllers were local controllers. How would
+you have to change the Python script you created in this activity in order
+to use remote controllers instead of local ones? (Hint: see reference \cite{ref-4})}
+\hrulefill
+
+\hrulefill
+
+\hrulefill
+
+\hrulefill
+
+
+
+\subsubsection*{4 - How could we improve the fault tolerance of the netowork shown
+in figure \ref{fig:topology-1} making minor changes to the Python script used?}
+% Each switch connected to both controllers, each controller
 % could be a distributed controller
 \hrulefill
 
@@ -329,9 +355,11 @@ in figure \ref{fig:topology-1}?} % Each switch connected to both controllers, ea
 
 \hrulefill
 
-\hrulefill
+
+
 
 \lstset{
+ upquote=true,
  showspaces=false,
  showtabs=false,
  frame=single,
