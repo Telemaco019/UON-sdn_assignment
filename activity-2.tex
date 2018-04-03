@@ -52,13 +52,13 @@ In this activity you will implement the topology shown in figure \ref{fig:topolo
 a Python script and the classes provided by the high-level Mininet API, which
 represent topology templates. In order to use these classes for creating a network
 with multiple contollers, you will have to define a new switch class that extends
-the OVSSwitch class normally used.
+the standard OVSSwitch class provided by the API.
 
 Begin by creating a new Python script and importing the required Mininet classes.
 Create the controllers present in the topology and define
 a custom switch class which extends the class \code{OVSSwitch}. Define a funcion for creating
 the network and inside its body use one of the topology templates provided
-by the Mininet API to implement the required topology.
+by the API to implement the required topology.
 After writing the script, execute it and test the network connectivity and its
 performance. To conclude, answer the questions proposed in the last task.
 
@@ -66,11 +66,11 @@ This lab activity assumes that:
 \begin{itemize}
   \item you are proficient in SDN networks
   \item you are proficient in Mininet network emulator
-  \item you have a basic knowledge of the Python programming language
+  \item you have a basic knowledge of Python object-oriented
   \item you have already completed Activity 1.
 \end{itemize}
 
-The activity is inspired to the script \textit{controllers.py} \cite{ref-5} included in the
+The activity is inspired to the script \textit{controllers.py} \cite{ref-6} included in the
 examples provided by Mininet, which can therefore be used as
 an additional example of how a topology with multiple controllers can be implemented
 inside Mininet using a Python script and defining a custom switch class.
@@ -81,7 +81,7 @@ inside Mininet using a Python script and defining a custom switch class.
 
 \subsection*{Task 1: create the controllers}
 \subsubsection*{Step 1}
-Create a new Python script and edit with the text editor you prefer. If you're editing
+Create a new Python script and edit it with the text editor you prefer. If you're editing
 it inside the Mininet virtual machine, it is suggested to use Vim text editor.
 
 \subsubsection*{Step 2}
@@ -141,7 +141,7 @@ def start( self, controllers ):
 The method simply returns the result of the call to the method \code{start} of the
 superclass passing as parameter the controller associated to the switch name, as defined by
 the map \code{cmap} previously created. In this way each switch will connect to
-the relative controller, according to the map \code{cmap}.
+the relative controller according to the map \code{cmap}.
 
 
 
@@ -156,8 +156,8 @@ def multiControllerNet():
 \end{lstlisting}
 
 \subsubsection*{Step 2}
-Create a new linear topology using the class \code{LinearTopology} provided by
-the Mininet API, specifying as parameters the number of switches \code{k} and the
+Create a new linear topology using the class \code{LinearTopo} provided by
+the API, specifying as parameters the number of switches \code{k} and the
 number of hosts per switch \code{n}:
 \begin{lstlisting}
 topo = LinearTopo( k=4, n=3 )
@@ -280,8 +280,8 @@ to use remote controllers instead of local ones?}
 
 
 \subsubsection*{3 - Try to modify the script you realized in order to have only
-two controllers instead of four, each one linked to two different switches. Note
-that each switch must be linked to a controller. }
+two controllers instead of four, each one linked to two different switches. Each
+switch must be linked to a controller. }
 \hrulefill
 
 \hrulefill
@@ -311,7 +311,7 @@ that each switch must be linked to a controller. }
 }
 
 \begin{minipage}{\linewidth}
-\begin{lstlisting}[label=lst:activity-2-script, caption=complete Python script required for Activity 2]
+\begin{lstlisting}[label=lst:activity-2-script, caption=the complete Python script required for Activity 2]
 #!/usr/bin/Python
 from mininet.net import Mininet
 from mininet.node import OVSSwitch, Controller
