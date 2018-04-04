@@ -71,6 +71,7 @@ from mininet.net import Mininet
 from mininet.node import Controller, OVSSwitch
 from mininet.cli import CLI
 from mininet.log import setLogLevel, info
+from mininet.link import TCLink
 \end{lstlisting}
 
 \subsubsection*{Step 3}
@@ -83,15 +84,18 @@ def multiControllerNet():
 Inside the body of the function \code{multiControllerNet()} create a new Mininet
 network:
 \begin{lstlisting}
-net = Mininet( controller=Controller, switch=OVSSwitch )
+net = Mininet( controller=Controller, switch=OVSSwitch, link=TCLink )
 \end{lstlisting}
 
-The Mininet network is created invoking the Mininet constructor: the parameters
-passed to the constructor are the Controller class and the OVSSwitch class, therefore
-the Stanford/OpenFlow reference controllers and Open vSwitch switches will be used
-in the network we are goind to create. Note that these two classes are
-the default parameters in the Mininet constructor, so it is not really necessary
-to specify them \cite{ref-4}.
+The Mininet network is created invoking the Mininet constructor: the first two parameters
+passed to the constructor are the classes \code{Controller} and \code{OVSSwitch}, therefore
+Stanford/OpenFlow reference controllers and Open vSwitch switches will be used
+in the created network. Note that these two classes are the default parameters in
+the Mininet constructor, so it is not really necessary to specify them \cite{ref-4}.
+
+The third parameter passed to the constructor is the class \code{TCLink}, which provides
+performance limiting features. By using this class it is possible to set performance
+parameters when creating the links of the Mininet network.
 
 \subsubsection*{Step 6}
 Make the script executable only as a program, set the CLI verbosity level to ``info''
@@ -161,11 +165,11 @@ switches and the link between the two switches. For creating the links
 use the function \code{addLink}, specifying the bandwidth and the delay for each link:
 \begin{lstlisting}
 info( "*** Creating links \n" )
-net.addLink( h3, s1, bw=10, delay='5ms' )
-net.addLink( h4, s1, bw=10, delay='5ms' )
-net.addLink( h5, s2, bw=10, delay='5ms' )
-net.addLink( h6, s2, bw=10, delay='5ms' )
-net.addLink( s1, s2, bw=20, delay='2ms' )
+net.addLink( h1, s1, bw=5, delay='5ms' )
+net.addLink( h2, s1, bw=5, delay='5ms' )
+net.addLink( h3, s2, bw=5, delay='5ms' )
+net.addLink( h4, s2, bw=5, delay='5ms' )
+net.addLink( s1, s2, bw=10, delay='2ms' )
 \end{lstlisting}
 
 Note that the bandwidth specified with the parameter \code{bw} is expressed in
@@ -362,9 +366,10 @@ from mininet.net import Mininet
 from mininet.node import Controller, OVSSwitch
 from mininet.cli import CLI
 from mininet.log import setLogLevel, info
+from mininet.link import TCLink
 
 def multiControllerNet():
-    net = Mininet( controller=Controller, switch=OVSSwitch )
+    net = Mininet( controller=Controller, switch=OVSSwitch, link=TCLink )
 
     info( "*** Creating hosts\n" )
     h1 = net.addHost('h3')
@@ -377,11 +382,11 @@ def multiControllerNet():
     s2 = net.addSwitch( 's2' )
 
     info( "*** Creating links\n" )
-		net.addLink( h3, s1, bw=10, delay='5ms' )
-		net.addLink( h4, s1, bw=10, delay='5ms' )
-		net.addLink( h5, s2, bw=10, delay='5ms' )
-		net.addLink( h6, s2, bw=10, delay='5ms' )
-		net.addLink( s1, s2, bw=20, delay='2ms' )
+    net.addLink( h1, s1, bw=5, delay='5ms' )
+    net.addLink( h2, s1, bw=5, delay='5ms' )
+    net.addLink( h3, s2, bw=5, delay='5ms' )
+    net.addLink( h4, s2, bw=5, delay='5ms' )
+    net.addLink( s1, s2, bw=10, delay='2ms' )
 
     info( "*** Creating (reference) controllers\n" )
     c0 = net.addController( 'c0', port=6633 )

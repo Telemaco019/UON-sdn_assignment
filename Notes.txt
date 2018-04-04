@@ -1,0 +1,5 @@
+- Global tools, add new Host-only network adapter, enable dhcp
+
+- How to start a pox learning switch controller on a custom port:
+  sudo ./pox.py forwarding.l2_learning openflow.of_01 --port=6634
+
