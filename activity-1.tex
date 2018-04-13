@@ -40,7 +40,7 @@ In this activity you will implement the simple topology shown in figure \ref{fig
 a Python script and the middle-level API provided by Mininet.
 Begin by creating a new Python script, then import the Mininet classes required for
 this activity and define the function that will be used to create the topology.
-Inside the body of this function create a new Mininet netowrk and add to it the
+Inside the body of this function create a new Mininet network and add to it the
 required hosts, switches, links and controllers. After writing the script, execute
 it to create the network, test its connectivity and verify that the performance
 meets the requirements. To conclude, answer the questions proposed in the last task.
@@ -192,7 +192,7 @@ c0 = net.addController( 'c0', port=6633 )
 c1 = net.addController( 'c1', port=6634 )
 \end{lstlisting}
 
-The function use to create the controllers is \code{addController}, which accept
+The function used to create the controllers is \code{addController}, which accept
 as parameters the name of the controller which will be created and the TCP port that
 will be used by the switches for connecting to the controller.
 
@@ -224,7 +224,7 @@ c1.start()
 \end{lstlisting}
 
 \subsubsection*{Step 4}
-Start the switches, specifying for each switch the controller to wich connect:
+Start the switches, specifying for each switch the controller to which connect:
 \begin{lstlisting}
 s1.start( [ c0 ] )
 s2.start( [ c1 ] )
@@ -303,9 +303,9 @@ single controller which serves all the switches of the network?}
 
 \hrulefill
 
-\subsubsection*{2 - Would the fault tolerance of the netowrk shown in figure
-\ref{fig:topology-1} change if we used only one controller (linked to both the
-switches) instead of two?}
+\subsubsection*{2 - Would the fault tolerance of the network shown in figure \ref{fig:topology-1}
+change if only one controller (linked to both the switches) was used
+instead of two?}
 \hrulefill
 
 \hrulefill

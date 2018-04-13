@@ -10,6 +10,8 @@
 \usepackage{url}
 \usepackage[titletoc]{appendix}
 \usepackage{textcomp}
+\usepackage{pdfpages}
+
 
 \definecolor{light-gray}{gray}{0.95}
 
@@ -46,7 +48,16 @@
 \begin{document}
 
 \maketitle
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=1\linewidth]{img/valuation-table.png}
+\end{figure}
+
 \newpage
+
+
+
+
 
 \section*{Overview}
 In this paper are proposed four different lab activities meant to teach how to implement
@@ -56,22 +67,22 @@ Each activity focuses on a single method and uses it to implement a given topolo
 In particular, in each activity the following methods will be explained:
 \begin{itemize}
   \item \textbf{Activity 1}: implement a network with multiple controllers using a python
-  script and the middle-level Mininet API.
+  script and the middle-level Mininet API
   \item \textbf{Activity 2}: implement a network with multiple local controllers using a python
-  script, a custom switch class and the topology classes provided by the Mininet high-level API.
-  \item \textbf{Activity 3}: implement a network with multiple controllers using
-  \emph{miniedit}, a tool provided by Mininet.
+  script, a custom switch class and the topology classes provided by the Mininet high-level API
+  \item \textbf{Activity 3}: how to dynamically connect the switches of a Mininet
+  network to different controllers using the tool ovs-vsctl.
 \end{itemize}
 
-The paper also includes a fourth lab activity (\textbf{Activity 4}), which is a conclusive challange meant
+The paper also includes a fourth lab activity (\textbf{Activity 4}), which is a conclusive challenge meant
 to let the reader test the knowledge acquired with the execution of the previous
 four activities. Each activity moreover contains some final questions aimed to make the reader
 reflect about what he did during that specific activity and possibly make him try to
-bring minor changes to the implemented topology. The solution
-for the activity 4 and the answers for the questions included in the previous activities
-can be found in appendix A.
+bring minor changes to the implemented topology. The solution for the activity 4
+and the answers for the questions included in the previous activities can be
+found in appendix A.
 
-It's important to point out that all the the proposed activities are meant to be
+It's important to point out that all the proposed activities are meant to be
 only an introduction to SDN controller clustering, therefore this paper won't cover
 some of the aspects that have to be considered when implementing a cluster of
 controllers in a real-world context, such as load balancing and communication
@@ -86,6 +97,8 @@ communication mechanism being necessary. [ REFERENCE ???]
 
 \include{activity-1}
 \include{activity-2}
+\include{activity-3}
+\include{challenge}
 \include{appendix-A}
 
 \begin{thebibliography}{99}
@@ -138,6 +151,11 @@ communication mechanism being necessary. [ REFERENCE ???]
   Software defined networking Kent State University,
   Available at: {\scriptsize \url{http://www.cs.kent.edu/~mallouzi/Software%20Defined%20Networking/Assignment2.pdf}}
 
+  \bibitem{ref-8}
+   Wiki.opendaylight.org. (n.d.).
+   \textit{OpenDaylight OpenFlow Plugin::Mininet with multiple controllers}. [online].
+   Available at: {\scriptsize \url{https://wiki.opendaylight.org/view/OpenDaylight_OpenFlow_Plugin::Mininet_with_multiple_controllers}}
+   [Accessed 12 Apr. 2018].
 
 
 \end{thebibliography}
