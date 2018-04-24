@@ -11,6 +11,8 @@
 \usepackage[titletoc]{appendix}
 \usepackage{textcomp}
 \usepackage{pdfpages}
+\usepackage[colorlinks]{hyperref}
+\hypersetup{urlcolor=blue}
 
 
 \definecolor{light-gray}{gray}{0.95}
@@ -34,6 +36,7 @@
 
 \setlength\parindent{0pt} % Indentazione paragrafi
 \setlength{\parskip}{1ex plus 0.5ex minus 0.2ex} % Spaziatura paragrafi
+
 
 \title{SDN controller clustering \\ \large Computer Networks module - SDN assignment}
 \author{Michele Zanotti}
@@ -86,14 +89,14 @@ It's important to point out that all the proposed activities are meant to be
 only an introduction to SDN controller clustering, therefore this paper won't cover
 some of the aspects that have to be considered when implementing a cluster of
 controllers in a real-world context, such as load balancing and communication
-between controllers. More information about these topics can be found in
-\cite{ref-1}, \cite{ref-2} and [].
+between controllers. More information about these topics can be found in references
+\cite{ref-2}, \cite{ref-1} and \cite{ref-9}.
 The communication between different controllers can however be automatically managed
-by Mininet, the network emulator used in this paper activities. When in fact a
+by Mininet, the network emulator used in these paper activities. When in fact a
 network with multiple local controllers is implemented inside the emulator, all
 the local controllers are executed inside the kernel space on a single machine
 and therefore they can communicate with each other without an external
-communication mechanism being necessary. [ REFERENCE ???]
+communication mechanism being necessary.
 
 \include{activity-1}
 \include{activity-2}
@@ -104,27 +107,27 @@ communication mechanism being necessary. [ REFERENCE ???]
 \begin{thebibliography}{99}
   \footnotesize
 
-  \bibitem{ref-1}
-  N. T. Hai and D. S. Kim,
-  ``Efficient load balancing for multi-controller in SDN-based mission-critical networks'',
-  \textit{2016 IEEE 14th International Conference on Industrial Informatics (INDIN)},
-  Poitiers,
-  2016,
-  pp. 420-425.
+  \bibitem{ref-7}
+  Allouzi, M. (2015),
+  \textit{Programming Assignment 2: Using Mininet and Mininet Python API: Instructions},
+  lecture notes,
+  Software defined networking Kent State University,
+  Available at: {\scriptsize \url{http://www.cs.kent.edu/~mallouzi/Software%20Defined%20Networking/Assignment2.pdf}}
 
   \bibitem{ref-2}
-  K. Phemius, M. Bouet and J. Leguay,
-  ``DISCO: Distributed SDN controllers in a multi-domain environment'',
-  \textit{2014 IEEE Network Operations and Management Symposium (NOMS)},
-  Krakow,
-  2014,
-  pp. 1-2.
+  Blial, O., Ben Mamoun, M. and Benaini, R. (2016).
+  An Overview on SDN Architectures with Multiple Controllers.
+  \textit{Journal of Computer Networks and Communications}, pp.1-8.
 
-  \bibitem{ref-3}
-  GitHub. (2016).
-  \textit{mininet}. [online].
-  Available at: {\scriptsize \url{https://github.com/mininet/mininet/blob/master/examples/controllers2.py}}
-  [Accessed 28 Mar. 2018].
+  \bibitem{ref-1}
+  Hai, N. and Kim, D. (2016).
+  Efficient load balancing for multi-controller in SDN-based mission-critical networks.
+  \textit{2016 IEEE 14th International Conference on Industrial Informatics (INDIN)}, pp.420-425
+
+  \bibitem{ref-9}
+  Phemius, K., Bouet, M. and Leguay, J. (2014).
+  DISCO: Distributed SDN controllers in a multi-domain environment.
+  \textit{2014 IEEE Network Operations and Management Symposium (NOMS)}.
 
   \bibitem{ref-4}
   GitHub. (n.d.).
@@ -132,11 +135,11 @@ communication mechanism being necessary. [ REFERENCE ???]
   Available at: {\scriptsize \url{https://github.com/mininet/mininet/wiki/Introduction-to-Mininet#controllers}}
   [Accesed 3 Apr. 2018].
 
-  \bibitem{ref-5}
-  GitHub. (2014).
-  \textit{Reg:Mininet with multiple external Remote controllers - Issue \#319}. [online].
-  Available at: {\scriptsize \url{https://github.com/mininet/mininet/issues/319}}
-  [Accessed 30 Mar. 2018]
+  \bibitem{ref-3}
+  GitHub. (2016).
+  \textit{mininet}. [online].
+  Available at: {\scriptsize \url{https://github.com/mininet/mininet/blob/master/examples/controllers2.py}}
+  [Accessed 28 Mar. 2018].
 
   \bibitem{ref-6}
   GitHub. (2016).
@@ -144,20 +147,17 @@ communication mechanism being necessary. [ REFERENCE ???]
   Available at: {\scriptsize \url{https://github.com/mininet/mininet/blob/master/examples/controllers.py}}
   [Accessed 28 Mar. 2018].
 
-  \bibitem{ref-7}
-  Allouzi, M 2015,
-  \textit{Programming Assignment 2: Using Mininet and Mininet Python API: Instructions},
-  lecture notes,
-  Software defined networking Kent State University,
-  Available at: {\scriptsize \url{http://www.cs.kent.edu/~mallouzi/Software%20Defined%20Networking/Assignment2.pdf}}
-
   \bibitem{ref-8}
    Wiki.opendaylight.org. (n.d.).
    \textit{OpenDaylight OpenFlow Plugin::Mininet with multiple controllers}. [online].
    Available at: {\scriptsize \url{https://wiki.opendaylight.org/view/OpenDaylight_OpenFlow_Plugin::Mininet_with_multiple_controllers}}
    [Accessed 12 Apr. 2018].
 
-
+  \bibitem{ref-5}
+  GitHub. (2014).
+  \textit{Reg:Mininet with multiple external Remote controllers - Issue \#319}. [online].
+  Available at: {\scriptsize \url{https://github.com/mininet/mininet/issues/319}}
+  [Accessed 30 Mar. 2018]
 \end{thebibliography}
 
 \end{document}
