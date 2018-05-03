@@ -1,0 +1,90 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{listings}
+\usepackage{courier}
+\usepackage{fancyhdr}
+\usepackage{color}
+\usepackage{xcolor}
+\usepackage{caption}
+\usepackage{graphicx}
+\usepackage{url}
+\usepackage[titletoc]{appendix}
+\usepackage{textcomp}
+\usepackage{pdfpages}
+\usepackage[colorlinks]{hyperref}
+\hypersetup{urlcolor=blue}
+
+
+\definecolor{light-gray}{gray}{0.95}
+
+\lstset{
+ upquote=true,
+ showspaces=false,
+ showtabs=false,
+ frame=none,
+ tabsize=2,
+ breaklines=true,
+ numbers=none,
+ showstringspaces=false,
+ breakatwhitespace=true,
+ escapeinside={(*@}{@*)},
+ keywordstyle=\bfseries,
+ basicstyle=\footnotesize\ttfamily,
+}
+
+\newcommand{\code}[1]{{\footnotesize\texttt{#1}}}
+
+\setlength\parindent{0pt} % Indentazione paragrafi
+\setlength{\parskip}{1ex plus 0.5ex minus 0.2ex} % Spaziatura paragrafi
+
+
+\title{
+  \includegraphics[width=0.8\textwidth]{img/logo.png}~ \\
+  Inter-RAT handover (E-UTRAN to UTRAN) \\ \large Computer Networks module - LTE assignment
+}
+\author{Michele Zanotti}
+\date{Spring term 2018}
+
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{Computer Networks}
+\rhead{LTE assignment}
+\rfoot{\thepage}
+
+\begin{document}
+
+\maketitle
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=1\linewidth]{img/valuation-table.png}
+\end{figure}
+
+\newpage
+
+\section{Introduction}
+The intra-RAT handover from E-UTRAN to UTRAN is composed of two phases: the
+preparation phase and the execution phase. Both the phases involve either LTE
+nodes and UMTS node. In particular, the LTE nodes involved are the eNodeB,
+E-UTRAN, and the MME, the S-GW and the P-GW. The first cited node belongs to
+the E-UTRAN while the others belong to the core network. The UMTS nodes are instead
+the RNC, the SGSN,
+
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=1\linewidth]{img/architecture-reference.png}
+	\label{fig:architecture-model}
+	\caption{Architecture referece model (non-roaming architecture for 3GPP accesses)}
+\end{figure}
+
+
+\include{preparation}
+
+
+
+\begin{thebibliography}{99}
+  \footnotesize
+
+
+\end{thebibliography}
+
+\end{document}

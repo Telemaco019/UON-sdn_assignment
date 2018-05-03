@@ -144,6 +144,9 @@ INPUT /media/telemaco/SD/Computer Networks/Assignement/main.out
 OUTPUT /media/telemaco/SD/Computer Networks/Assignement/main.out
 OUTPUT /media/telemaco/SD/Computer Networks/Assignement/main.pdf
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr17.tfm
+INPUT /media/telemaco/SD/Computer Networks/Assignement/img/logo.png
+INPUT /media/telemaco/SD/Computer Networks/Assignement/img/logo.png
+INPUT /media/telemaco/SD/Computer Networks/Assignement/img/logo.png
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr12.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmmi12.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm
