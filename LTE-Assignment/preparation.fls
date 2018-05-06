@@ -1,0 +1,11 @@
+PWD /media/telemaco/SD/Computer Networks/Assignement/LTE-Assignment
+INPUT /etc/texmf/web2c/texmf.cnf
+INPUT /usr/share/texmf/web2c/texmf.cnf
+INPUT /usr/share/texlive/texmf-dist/web2c/texmf.cnf
+INPUT /var/lib/texmf/web2c/pdftex/pdflatex.fmt
+INPUT /media/telemaco/SD/Computer Networks/Assignement/LTE-Assignment/preparation.tex
+OUTPUT /media/telemaco/SD/Computer Networks/Assignement/LTE-Assignment/preparation.log
+INPUT /usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmti10.tfm
+OUTPUT /media/telemaco/SD/Computer Networks/Assignement/LTE-Assignment/preparation.pdf
+INPUT /var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map

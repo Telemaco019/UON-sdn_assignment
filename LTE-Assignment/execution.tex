@@ -1,0 +1,63 @@
+\section{Execution phase}
+
+
+
+\subsection*{Step 1}
+The source MME completes the preparation phase by sending to the source eNodeB
+the \emph{Handover command} message through the interface S1. The message
+contains the following parameters:
+\begin{itemize}
+    \item Target to Source Transparent Container
+    \item E-RABs to Release List
+    \item Bearers Subject to Data Forwarding List: if ``Direct
+    Forwarding'' applies it is the list of ``Address(es) and TEID(s) for user
+    traffic data forwarding'' received from the target SGSN during step 7
+    of the preparation phase, otherwise if ``Indirect Forwarding'' applies
+    it contains the parameters received in step 8a from the S-GW
+    \item E-RABs to Release List
+\end{itemize}
+
+
+
+
+\subsection*{Step 2}
+The source eNodeB initiates data forwarding for bearers specified in the
+``Bearers Subject to Data Forwarding List'' of the message received from the MME.
+
+After that, the eNodeB sends the E-UTRAN command \emph{HO} to the UE for telling
+it to handover to the target access network. This message includes a transparent
+container which contains the radio parameters that the RNC has set-up during the
+preparation phase.
+
+After the reception of the HO command the UE has to associate its bearer IDs to
+the respective RABs according to the relation with the NSAPIs\footnote{NSAPI =
+Network Service Access Point Identifier, it is used to identify PDP contexts in
+the SGSN. A PDP context is a data structure which contains subscriber's session
+information such as its IMSI and its IP address} and has to suspend
+the uplink transmission of user data.
+
+
+
+\subsection*{Step 3}
+Void
+
+
+
+
+\subsection*{Step 4}
+The UE executes the handover to the target UTRAN according to the prameters
+contained in the message received in step 2. At this point it can resume the user
+data transfer only for those NSAPIs which have been associated to a RAB, namely
+the NSAPIs for which there are radio resources allocated in the target RNC.
+
+
+
+
+\subsection*{Step 5}
+After the RNC-ID and the S-RNTI\footnote{S-RNTI = Serving RNC Radio Network
+Temporary Identifier, in UMTS the S-RNTI is the UE identifier which is allocated
+by the RNC and it's unique within that RNC} are exchanged with the UE, the target
+RNC sends the \emph{Relocation Complete} message to the target SGSN, indicating
+therefore the completion of the relocation from the source E-UTRAN to the target
+RNC. After receiving this message, the SGSN is ready for receiving data from
+the target RNC. 
