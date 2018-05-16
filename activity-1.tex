@@ -7,7 +7,7 @@
 	\caption{the topology that will be implemented during this lab activity.
   It is a simple linear topology with two switches connected to each other,
   each one connected to two hosts. Each switch is linked to a different
-  SDN controller.}
+  SDN controller. The two controllers can be assumed local.}
 	\label{fig:topology-1}
 \end{figure}
 
@@ -18,16 +18,16 @@
 \subsection*{Learning objectives}
 After finishing this lab activity you will be able to:
 \begin{itemize}
-  \item Implement a cluster of local/remote controllers inside Mininet using the Python
-  middle-level Mininet API.
-  \item Test the network connectivity of a network which
+  \item implement a cluster of local/remote controllers inside Mininet using the Python
+  middle-level Mininet API
+  \item test the network connectivity of a network which
   includes a cluster of controllers and verify that its performance meets
-	the requirements.
-  \item Understand the main functions provided by the middle-level Mininet API required
-  to implement a cluster of controllers.
-	\item Understand how to set performance parameters when implementing a network
+	the requirements
+  \item understand the main functions provided by the middle-level Mininet API required
+  to implement a cluster of controllers
+	\item understand how to set performance parameters when implementing a network
 	using a Python script and the middle-level Mininet API
-  \item Reflect about the reasons of using more then one controller in SDN networks.
+  \item reflect about the reasons of using more than one controller in SDN networks.
 \end{itemize}
 
 
@@ -50,7 +50,7 @@ emulator %(how to create a basic topology, python API, how to connect a switch t
 %a remote controller,).
 A basic knowledge of the Python programming language is also required.
 
-The activity is inspired to the script \textit{controllers2.py} \cite{ref-3} included in the
+The activity is inspired by the script \textit{controllers2.py} \cite{ref-3} included in the
 examples provided by Mininet, which can therefore be used as
 an additional example of how a network with multiple controllers can be implemented
 inside Mininet using a Python script and the middle-level API.
@@ -192,7 +192,7 @@ c0 = net.addController( 'c0', port=6633 )
 c1 = net.addController( 'c1', port=6634 )
 \end{lstlisting}
 
-The function used to create the controllers is \code{addController}, which accept
+The function used to create the controllers is \code{addController}, which accepts
 as parameters the name of the controller which will be created and the TCP port that
 will be used by the switches for connecting to the controller.
 

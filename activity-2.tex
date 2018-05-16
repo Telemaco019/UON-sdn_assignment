@@ -22,23 +22,23 @@
 	\caption{the topology that will be implemented during this lab activity.
   It is a linear topology with four switches connected to each other,
   each one connected to three hosts. Each switch is linked to a different
-  SDN controller.}
+  SDN controller. All the controllers can be assumed local.}
 	\label{fig:topology-2}
 \end{figure}
 
 \subsection*{Learning objectives}
 After finishing this lab activity you will be able to:
 \begin{itemize}
-  \item Create a custom switch class that extends the OVSSwitch class provided
-  by the Mininet Python API.
-  \item Implement a cluster of local/remote controllers inside Mininet using a custom
-  switch class and the topology classes provided by the Mininet high-level API.
-  \item Implement more complex topologies with multiple controllers using a
-  few lines of Python code.
-  \item Reflect upon the method used in this activity for implementing a cluster of controllers
+  \item create a custom switch class that extends the OVSSwitch class provided
+  by the Mininet Python API
+  \item implement a cluster of local/remote controllers inside Mininet using a custom
+  switch class and the topology classes provided by the Mininet high-level API
+  \item implement more complex topologies with multiple controllers using a
+  few lines of Python code
+  \item reflect upon the method used in this activity for implementing a cluster of controllers
   and compare it with the method shown in Activity 1, focusing on the advantages
-  and disadvantages of each method.
-  \item Test the network connectivity and the performance of a network with multiple
+  and disadvantages of each method
+  \item test the network connectivity and the performance of a network with multiple
   controllers.
 \end{itemize}
 
@@ -70,7 +70,7 @@ This lab activity assumes that:
   \item you have already completed Activity 1.
 \end{itemize}
 
-The activity is inspired to the script \textit{controllers.py} \cite{ref-6} included in the
+The activity is inspired by the script \textit{controllers.py} \cite{ref-6} included in the
 examples provided by Mininet, which can therefore be used as
 an additional example of how a topology with multiple controllers can be implemented
 inside Mininet using a Python script and defining a custom switch class.

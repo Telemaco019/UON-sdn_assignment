@@ -110,6 +110,8 @@ INPUT /media/telemaco/SD/Computer Networks/Assignement/LTE-Assignment/preparatio
 INPUT /media/telemaco/SD/Computer Networks/Assignement/LTE-Assignment/preparation.aux
 INPUT /media/telemaco/SD/Computer Networks/Assignement/LTE-Assignment/execution.aux
 INPUT /media/telemaco/SD/Computer Networks/Assignement/LTE-Assignment/execution.aux
+INPUT /media/telemaco/SD/Computer Networks/Assignement/LTE-Assignment/reject.aux
+INPUT /media/telemaco/SD/Computer Networks/Assignement/LTE-Assignment/reject.aux
 OUTPUT /media/telemaco/SD/Computer Networks/Assignement/LTE-Assignment/main.aux
 INPUT /usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
 INPUT /usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
@@ -150,6 +152,19 @@ INPUT /media/telemaco/SD/Computer Networks/Assignement/LTE-Assignment/img/valuat
 INPUT /var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr17.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr8.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr6.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmmi12.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmmi8.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmmi6.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmsy8.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmsy6.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmti12.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/tcrm1200.tfm
+INPUT /media/telemaco/SD/Computer Networks/Assignement/LTE-Assignment/img/pre-handhover-links.png
+INPUT /media/telemaco/SD/Computer Networks/Assignement/LTE-Assignment/img/pre-handhover-links.png
+INPUT /media/telemaco/SD/Computer Networks/Assignement/LTE-Assignment/img/pre-handhover-links.png
 INPUT /media/telemaco/SD/Computer Networks/Assignement/LTE-Assignment/img/architecture-reference.png
 INPUT /media/telemaco/SD/Computer Networks/Assignement/LTE-Assignment/img/architecture-reference.png
 INPUT /media/telemaco/SD/Computer Networks/Assignement/LTE-Assignment/img/architecture-reference.png
@@ -160,43 +175,60 @@ INPUT /media/telemaco/SD/Computer Networks/Assignement/LTE-Assignment/img/prepar
 INPUT /media/telemaco/SD/Computer Networks/Assignement/LTE-Assignment/img/preparation-phase.png
 INPUT /media/telemaco/SD/Computer Networks/Assignement/LTE-Assignment/img/preparation-phase.png
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
-INPUT /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/tcrm1200.tfm
-INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr8.tfm
-INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr6.tfm
-INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmmi12.tfm
-INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmmi8.tfm
-INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmmi6.tfm
-INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm
-INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmsy8.tfm
-INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmsy6.tfm
-INPUT /media/telemaco/SD/Computer Networks/Assignement/LTE-Assignment/img/2.png
-INPUT /media/telemaco/SD/Computer Networks/Assignement/LTE-Assignment/img/2.png
-INPUT /media/telemaco/SD/Computer Networks/Assignement/LTE-Assignment/img/2.png
-INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmti12.tfm
-INPUT /media/telemaco/SD/Computer Networks/Assignement/LTE-Assignment/img/3.png
-INPUT /media/telemaco/SD/Computer Networks/Assignement/LTE-Assignment/img/3.png
-INPUT /media/telemaco/SD/Computer Networks/Assignement/LTE-Assignment/img/3.png
-INPUT /media/telemaco/SD/Computer Networks/Assignement/LTE-Assignment/img/4.png
-INPUT /media/telemaco/SD/Computer Networks/Assignement/LTE-Assignment/img/4.png
-INPUT /media/telemaco/SD/Computer Networks/Assignement/LTE-Assignment/img/4.png
-INPUT /media/telemaco/SD/Computer Networks/Assignement/LTE-Assignment/img/5.png
-INPUT /media/telemaco/SD/Computer Networks/Assignement/LTE-Assignment/img/5.png
-INPUT /media/telemaco/SD/Computer Networks/Assignement/LTE-Assignment/img/5.png
-INPUT /media/telemaco/SD/Computer Networks/Assignement/LTE-Assignment/img/6.png
-INPUT /media/telemaco/SD/Computer Networks/Assignement/LTE-Assignment/img/6.png
-INPUT /media/telemaco/SD/Computer Networks/Assignement/LTE-Assignment/img/6.png
+INPUT /media/telemaco/SD/Computer Networks/Assignement/LTE-Assignment/img/preparation-2.png
+INPUT /media/telemaco/SD/Computer Networks/Assignement/LTE-Assignment/img/preparation-2.png
+INPUT /media/telemaco/SD/Computer Networks/Assignement/LTE-Assignment/img/preparation-2.png
+INPUT /media/telemaco/SD/Computer Networks/Assignement/LTE-Assignment/img/preparation-3.png
+INPUT /media/telemaco/SD/Computer Networks/Assignement/LTE-Assignment/img/preparation-3.png
+INPUT /media/telemaco/SD/Computer Networks/Assignement/LTE-Assignment/img/preparation-3.png
+INPUT /media/telemaco/SD/Computer Networks/Assignement/LTE-Assignment/img/preparation-4.png
+INPUT /media/telemaco/SD/Computer Networks/Assignement/LTE-Assignment/img/preparation-4.png
+INPUT /media/telemaco/SD/Computer Networks/Assignement/LTE-Assignment/img/preparation-4.png
 INPUT /media/telemaco/SD/Computer Networks/Assignement/LTE-Assignment/img/direct-tunnelling.png
 INPUT /media/telemaco/SD/Computer Networks/Assignement/LTE-Assignment/img/direct-tunnelling.png
 INPUT /media/telemaco/SD/Computer Networks/Assignement/LTE-Assignment/img/direct-tunnelling.png
-INPUT /media/telemaco/SD/Computer Networks/Assignement/LTE-Assignment/img/7.png
-INPUT /media/telemaco/SD/Computer Networks/Assignement/LTE-Assignment/img/7.png
-INPUT /media/telemaco/SD/Computer Networks/Assignement/LTE-Assignment/img/7.png
-INPUT /media/telemaco/SD/Computer Networks/Assignement/LTE-Assignment/img/8.png
-INPUT /media/telemaco/SD/Computer Networks/Assignement/LTE-Assignment/img/8.png
-INPUT /media/telemaco/SD/Computer Networks/Assignement/LTE-Assignment/img/8.png
+INPUT /media/telemaco/SD/Computer Networks/Assignement/LTE-Assignment/img/preparation-5.png
+INPUT /media/telemaco/SD/Computer Networks/Assignement/LTE-Assignment/img/preparation-5.png
+INPUT /media/telemaco/SD/Computer Networks/Assignement/LTE-Assignment/img/preparation-5.png
+INPUT /media/telemaco/SD/Computer Networks/Assignement/LTE-Assignment/img/preparation-6.png
+INPUT /media/telemaco/SD/Computer Networks/Assignement/LTE-Assignment/img/preparation-6.png
+INPUT /media/telemaco/SD/Computer Networks/Assignement/LTE-Assignment/img/preparation-6.png
 OUTPUT /media/telemaco/SD/Computer Networks/Assignement/LTE-Assignment/execution.aux
 INPUT /media/telemaco/SD/Computer Networks/Assignement/LTE-Assignment/execution.tex
 INPUT /media/telemaco/SD/Computer Networks/Assignement/LTE-Assignment/execution.tex
+INPUT /media/telemaco/SD/Computer Networks/Assignement/LTE-Assignment/img/execution-1.png
+INPUT /media/telemaco/SD/Computer Networks/Assignement/LTE-Assignment/img/execution-1.png
+INPUT /media/telemaco/SD/Computer Networks/Assignement/LTE-Assignment/img/execution-1.png
+INPUT /media/telemaco/SD/Computer Networks/Assignement/LTE-Assignment/img/execution-2.png
+INPUT /media/telemaco/SD/Computer Networks/Assignement/LTE-Assignment/img/execution-2.png
+INPUT /media/telemaco/SD/Computer Networks/Assignement/LTE-Assignment/img/execution-2.png
+INPUT /media/telemaco/SD/Computer Networks/Assignement/LTE-Assignment/img/execution-3.png
+INPUT /media/telemaco/SD/Computer Networks/Assignement/LTE-Assignment/img/execution-3.png
+INPUT /media/telemaco/SD/Computer Networks/Assignement/LTE-Assignment/img/execution-3.png
+INPUT /media/telemaco/SD/Computer Networks/Assignement/LTE-Assignment/img/execution-4.png
+INPUT /media/telemaco/SD/Computer Networks/Assignement/LTE-Assignment/img/execution-4.png
+INPUT /media/telemaco/SD/Computer Networks/Assignement/LTE-Assignment/img/execution-4.png
+INPUT /media/telemaco/SD/Computer Networks/Assignement/LTE-Assignment/img/execution-5.png
+INPUT /media/telemaco/SD/Computer Networks/Assignement/LTE-Assignment/img/execution-5.png
+INPUT /media/telemaco/SD/Computer Networks/Assignement/LTE-Assignment/img/execution-5.png
+INPUT /media/telemaco/SD/Computer Networks/Assignement/LTE-Assignment/img/execution-6.png
+INPUT /media/telemaco/SD/Computer Networks/Assignement/LTE-Assignment/img/execution-6.png
+INPUT /media/telemaco/SD/Computer Networks/Assignement/LTE-Assignment/img/execution-6.png
+INPUT /media/telemaco/SD/Computer Networks/Assignement/LTE-Assignment/img/execution-7.png
+INPUT /media/telemaco/SD/Computer Networks/Assignement/LTE-Assignment/img/execution-7.png
+INPUT /media/telemaco/SD/Computer Networks/Assignement/LTE-Assignment/img/execution-7.png
+INPUT /media/telemaco/SD/Computer Networks/Assignement/LTE-Assignment/img/final-data-path.png
+INPUT /media/telemaco/SD/Computer Networks/Assignement/LTE-Assignment/img/final-data-path.png
+INPUT /media/telemaco/SD/Computer Networks/Assignement/LTE-Assignment/img/final-data-path.png
+INPUT /media/telemaco/SD/Computer Networks/Assignement/LTE-Assignment/img/execution-9.png
+INPUT /media/telemaco/SD/Computer Networks/Assignement/LTE-Assignment/img/execution-9.png
+INPUT /media/telemaco/SD/Computer Networks/Assignement/LTE-Assignment/img/execution-9.png
+OUTPUT /media/telemaco/SD/Computer Networks/Assignement/LTE-Assignment/reject.aux
+INPUT /media/telemaco/SD/Computer Networks/Assignement/LTE-Assignment/reject.tex
+INPUT /media/telemaco/SD/Computer Networks/Assignement/LTE-Assignment/reject.tex
+INPUT /media/telemaco/SD/Computer Networks/Assignement/LTE-Assignment/img/handover-reject.png
+INPUT /media/telemaco/SD/Computer Networks/Assignement/LTE-Assignment/img/handover-reject.png
+INPUT /media/telemaco/SD/Computer Networks/Assignement/LTE-Assignment/img/handover-reject.png
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmti10.tfm
 INPUT /usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 INPUT /usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
@@ -208,6 +240,8 @@ INPUT /media/telemaco/SD/Computer Networks/Assignement/LTE-Assignment/preparatio
 INPUT /media/telemaco/SD/Computer Networks/Assignement/LTE-Assignment/preparation.aux
 INPUT /media/telemaco/SD/Computer Networks/Assignement/LTE-Assignment/execution.aux
 INPUT /media/telemaco/SD/Computer Networks/Assignement/LTE-Assignment/execution.aux
+INPUT /media/telemaco/SD/Computer Networks/Assignement/LTE-Assignment/reject.aux
+INPUT /media/telemaco/SD/Computer Networks/Assignement/LTE-Assignment/reject.aux
 INPUT /media/telemaco/SD/Computer Networks/Assignement/LTE-Assignment/main.out
 INPUT /media/telemaco/SD/Computer Networks/Assignement/LTE-Assignment/main.out
 INPUT /usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc

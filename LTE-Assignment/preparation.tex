@@ -8,7 +8,7 @@
 \end{figure}
 
 \subsection*{Step 1}
-The source eNodeB decides to initiate an Inter-RAT handover to thetarget access network.
+The source eNodeB decides to initiate an Inter-RAT handover to the target access network.
 
 Note that at this point both uplink and downlink user data is transmitted through:
 \begin{itemize}
@@ -16,35 +16,34 @@ Note that at this point both uplink and downlink user data is transmitted throug
 	\item GTP\footnote{GPRS Tunneling protocol (GTP) is a IP/UDP based protocol used to
 	encapsulate user data when passing through core network (GTP-U) or to carry bearer
 	specific signalling traffic between various core network nodes (GTP-C).} tunnel(s)
-	between	source eNodeB, Serving GW and PDN GW.
+	between	source eNodeB, S-GW and P-GW.
 \end{itemize}
 
 
 \subsection*{Step 2}
 \begin{figure}[htb]
 	\centering
-	\includegraphics[width=0.9\linewidth]{img/2.png}
+	\includegraphics[width=0.9\linewidth]{img/preparation-2.png}
 	\label{fig:2}
 \end{figure}
 The source eNodeB sends a \emph{Handover Required} message to the
-source MME, requesting the CN to establish resources in the target RNC,
-target SGSN and the Serving GW. The message is sent through the S1 interface and
-it contains the following parameters:
+source MME, requesting the CN to establish resources in the target RNC and it the
+target SGSN. The message is sent through the S1 interface and it contains the
+following parameters:
 \begin{itemize}
 	\item S1AP Cause: it specifies the reason of the message
 	\item Target RNC Identifier: it identifies the target RNC
 	\item CSG access mode: included only if the target cell is a hybrid cell
-	\item CSG ID: included only if the target cell is a CSG\footnote{CSG = closed
-	subscriber group of a home eNodeB} or hybrid cell, it	identifies the cell
+	\item CSG ID: included only if the target cell is a CSG or hybrid cell, it identifies the cell
 	\item Source to Target Transparent Container: it carries RRC parameters and
-	Radio Bearer information
+	Radio Bearer information necessary to set-up the radio bearers.
 \end{itemize}
 
 
 \subsection*{Step 3}
 \begin{figure}[htb]
 	\centering
-	\includegraphics[width=0.9\linewidth]{img/3.png}
+	\includegraphics[width=0.9\linewidth]{img/preparation-3.png}
 	\label{fig:3}
 \end{figure}
 The source MME determines from the ``Target RNC Identifier'' field that
@@ -76,35 +75,19 @@ message through the S3 interface. Some of the parameters included in this messag
  rejects the handover attempt and sends a Handover Preparation Failure message to the
  Source eNodeB.
 
-\newpage
+
 \subsection*{Step 4}
 \begin{figure}[!htb]
 	\centering
-	\includegraphics[width=0.9\linewidth]{img/4.png}
-	\label{fig:4}
-\end{figure}
-The target SGSN determines if the S-GW has to be relocated. If so,
-it selects the target S-GW and sends to it a \emph{Create Session Request message} per
-each PDN connection.
-
-After that, the target SGSN establishes the EPS Bearer contexts indicated by
-the message received from the MME and deactivates the Bearer contexts which can't be
-estabilished.
-
-
-\subsection*{Step 4a}
-The target S-GW allocates its local resources and returns a
-\emph{Create Session Response} to the target SGSN.
-
-
-\subsection*{Step 5}
-\begin{figure}[!htb]
-	\centering
-	\includegraphics[width=0.9\linewidth]{img/5.png}
+	\includegraphics[width=0.9\linewidth]{img/preparation-4.png}
 	\label{fig:5}
 \end{figure}
-The target SGSN requests the target RNC to establish the radio
-network resources (radio access beares - RABs) by sending the
+The target SGSN establishes the EPS Bearer contexts indicated by the message
+received from the MME and deactivates the Bearer contexts which can't be
+estabilished.
+
+After that, it requests the target RNC to establish the radio
+network resources (RABs) by sending the
 \emph{Relocation Request} message through the Iu-PS interface. Some of the
 parameters included in this message are:
 \begin{itemize}
@@ -112,7 +95,7 @@ parameters included in this message are:
 	continue in the new UTRAN target cell without requiring a new Authentication
 	and Key Agreement (AKA) procedure
 	\item RAB to be setup list: for each RAB to be set up it contains information
-	such as the RAB ID and other RAB parameters
+	such as the RAB ID (which contains the NSAPI value) and other RAB parameters
 	\item CSG ID and CSG Membership Indication: included only when provided by
 	the the source MME in the \emph{Forward Relocation Request} message
 	\item Source RNC to Target RNC Transparent Container: it includes the information
@@ -126,7 +109,7 @@ RNC only accepts emergency bearers.
 
 
 
-\subsection*{Step 5a}
+\subsection*{Step 4a}
 For each accepted bearer, the target RNC allocates radio and Iu
 user plane resources. After that, the target RNC sends back to the SGSN the
 \emph{Relocation Request Acknowledge} messages, which contains a list of the
@@ -134,27 +117,11 @@ setup bearers and a list of the failed to setup bearers, which will be deactivat
 by the SGSN.
 
 After sending the ACK the RNC is prepared to receive downlink GTP
-PDUs\footnote{Packets received by a protocol layer are called Service Data Unit
-(SDU) while packets output of a layer are called Protocol Data Unit (PDU).}
+PDUs\footnote{Packets received by a protocol layer are called SDU while packets
+output of a layer are called PDU.}
 from the S-GW (or from the target SGSN if Direct Tunnel is not used) for the
 accepted bearers.
 
-
-
-\subsection*{Step 6}
-\begin{figure}[!htb]
-	\centering
-	\includegraphics[width=0.9\linewidth]{img/6.png}
-	\label{fig:6}
-\end{figure}
-If Indirect Forwarding and relocation of S-GW apply then the
-target SGSN sends a \emph{Create Indirect Data Forwarding Tunnel Request}
-message to the target S-GW through the S4 interface. If GTP Direct Tunnel is used
-then message includes the Target RNC Address, while if Direct Tunnel isn't
-used the message includes the SGSN address. In both cases the message also
-include the TEIDs\footnote{TEID = Tunnel Endpoint identifier. Each GTP tunnel
-is associated with two TEID: one for the downlink and one for the uplink}
-for downlink user data forwarding.
 \begin{figure}[!htb]
 	\centering
 	\includegraphics[width=1\linewidth]{img/direct-tunnelling.png}
@@ -163,51 +130,71 @@ for downlink user data forwarding.
 \end{figure}
 
 
-\subsection*{Step 6a}
-The S-GW responds to the SGSN with a \emph{Create Indirect Data Forwarding Tunnel
-Response} message, specifying as parameter the S-GW Address(es) and
-the S-GW DL TEID(s) for data forwarding.
+
+%\subsection*{Step 6}
+%\begin{figure}[!htb]
+%	\centering
+%	\includegraphics[width=0.9\linewidth]{img/6.png}
+%	\label{fig:6}
+%\end{figure}
+%f Indirect Forwarding and relocation of S-GW apply then the
+%target SGSN sends a \emph{Create Indirect Data Forwarding Tunnel Request}
+%message to the target S-GW through the S4 interface. If GTP Direct Tunnel is used
+%then message includes the Target RNC Address, while if Direct Tunnel isn't
+%used the message includes the SGSN address. In both cases the message also
+%include the TEIDs\footnote{TEID = Tunnel Endpoint identifier. Each GTP tunnel
+%is associated with two TEID: one for the downlink and one for the uplink}
+%for downlink user data forwarding.
 
 
 
-\subsection*{Step 7}
+%\subsection*{Step 6a}
+%The S-GW responds to the SGSN with a \emph{Create Indirect Data Forwarding Tunnel
+%Response} message, specifying as parameter the S-GW Address(es) and
+%the S-GW DL TEID(s) for data forwarding.
+
+
+
+\subsection*{Step 5}
 \begin{figure}[!htb]
 	\centering
-	\includegraphics[width=0.9\linewidth]{img/7.png}
+	\includegraphics[width=0.9\linewidth]{img/preparation-5.png}
 	\label{fig:7}
 \end{figure}
 The target SGSN sends the \emph{Forward Relocation Response} message
 to the source MME through the S3 interface. Some of the parameters contained in
 the message are:
 \begin{itemize}
- \item S-GW change indication: indicates if a new S-GW has been selected
  \item Target to Source Transparent Container: it contains the value of the
-  Target RNC to Source RNC Transparent Container received from the target RNC
- \item Address(es) and TEID(s) for User Traffic Data Forwarding: they define
- the destination tunnelling endpoint for forwarded data
- \item Address(es) and TEID(s) for User Traffic Data Forwarding. If 'Indirect
- Forwarding' and relocation of Serving GW apply then this parameter
+ Target RNC to Source RNC Transparent Container received from the target RNC
+ \item Address(es) and TEID(s) for User Traffic Data Forwarding: this field
+ define the destination tunnelling endpoint for user data forwarding. If Direct Tunnel
+ is used then it contains the addresses and GTP-U tunnel endpoint parameters
+ to the Target RNC, otherwise it contains the DL GTP-U tunnel endpoint parameters
+ to the Target SGSN.
+ \item SGSN Tunnel Endpoint Identifier for Control Plane
+ \item SGSN Address for Control Plane
 \end{itemize}
 
 
 
-\subsection*{Step 8}
+\subsection*{Step 6}
 \begin{figure}[!htb]
 	\centering
-	\includegraphics[width=0.9\linewidth]{img/8.png}
+	\includegraphics[width=0.9\linewidth]{img/preparation-6.png}
 	\label{fig:8}
 \end{figure}
 If ``Indirect Forwarding'' applies, the Source MME sends the message \emph{Create
 Indirect Data Forwarding Tunnel Request} to the S-GW used for indirect forwarding.
 The parameters contained in the message are the list of ``Address(es) and TEID(s) for Data
-Forwarding'' received in step 7 and the EPS Bearer ID(s).
+Forwarding'' received in step 5 and the EPS Bearer ID(s).
 
 
 
-\subsection*{Step 8a}
+\subsection*{Step 6a}
 The S-GW replies sending message \emph{Create Indirect Data Forwarding Tunnel
 Response}, which contains the S-GW Address(es) and the TEID(s) for data
-forwarding. Note that the  Indirect Forwarding may be performed via a Serving GW
-which is different from the Serving GW used as the anchor point for the UE.
+forwarding. Note that the  Indirect Forwarding may be performed via a S-GW
+which is different from the S-GW used as the anchor point for the UE.
 If the S-GW doesn't support data forwarding, the message contains only an appropriate
 cause.

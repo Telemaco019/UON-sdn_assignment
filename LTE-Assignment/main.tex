@@ -51,7 +51,9 @@
 \rhead{LTE assignment}
 \rfoot{\thepage}
 
+
 \begin{document}
+
 
 \maketitle
 \begin{figure}[htb]
@@ -59,26 +61,104 @@
 	\includegraphics[width=1\linewidth]{img/valuation-table.png}
 \end{figure}
 
-\newpage
 
+
+
+\clearpage
+\section*{List of Abbreviations}
+\begin{tabular}{ p{4cm} l }
+ 3GPP & Third Generation Partnership Project \\
+ CN & Core network \\
+ CSG & Closed subscriber group (of a home eNodeB) \\
+ E-UTRAN & Evolved UMTS terrestrial radio access network \\
+ EPS & Evolved packet system \\
+ GGSN & Gateway GPRS Support Node \\
+ GTP & GPRS tunnelling protocol \\
+ GTP-C & GPRS tunnelling protocol control part \\
+ GTP-U & GPRS tunnelling protocol user part \\
+ IMEI & International mobile equipment identity \\
+ LTE & Long term evolution \\
+ MME & Mobility management entity \\
+ NSAPI & Network Service Access Point Identifier \\
+ PDN & Packet data network \\
+ PDU & Protocol data unit \\
+ P-GW & Packet data network gateway \\
+ RAB & Radio access bearer \\
+ RNC & Radio network controller \\
+ SDU & Service data unit \\
+ SGSN & Serving GPRS Support Node \\
+ S-GW & Serving gateway \\
+ S-RNTI & Serving RNC Radio Network Temporary Identifier \\
+ TEID & Tunnel endpoint identifier \\
+ UE & User equipment \\
+ UMTS & Universal Mobile Telecommunications System \\
+ UTRAN & UMTS terrestrial radio access network \\
+
+
+\end{tabular}
+
+\clearpage
 \section{Introduction}
-The intra-RAT handover from E-UTRAN to UTRAN is composed of two phases: the
-preparation phase and the execution phase. Both the phases involve either LTE
-nodes and UMTS node. In particular, the LTE nodes involved are the eNodeB,
-E-UTRAN, and the MME, the S-GW and the P-GW. The first cited node belongs to
-the E-UTRAN while the others belong to the core network. The UMTS nodes are instead
-the RNC, the SGSN,
+The intra-RAT handover from E-UTRAN to UTRAN is composed of two phases, each of
+which involves (as well as the UE) either nodes from the LTE network and nodes
+from the UMTS netowork: the \emph{preparation phase} and the \emph{execution phase}.
+In particular, the LTE elements involved in the procedure are:
+\begin{itemize}
+  \item eNodeB
+  \item E-UTRAN network
+  \item MME
+  \item S-GW
+  \item P-GW
+\end{itemize}
+while the UMTS elements are:
+\begin{itemize}
+  \item RNC
+  \item SGSN
+  \item GGSN
+\end{itemize}
+
+It is assumed that both the LTE and the UMTS networks belong to the same
+operator. This means that the P-GW of the LTE network and the GGSN of the UMTS
+network are the same physical device, therefore, since in this paper the focus
+is on the LTE network, only the P-GW will be showed. Moreover, since the goal
+of this paper is to show only the intra-RAT handover procedure, some non-central
+aspects such as the relocation of the S-GW will not be considered and the related
+messages and parameters will be left out.
+
+It is important to point out that before, during and after the handover the UE
+is in the state ``LTE\_ACTIVE'' and user data is uploaded/downloaded (otherwise
+if the UE was in idle state it wouldn't be a handover but a simple cell reselection).
+In particular, as shown in figure \ref{fig:pre-handover-links}, before the handover procedure both uplink
+and downlink user data is transmitted through:
+\begin{itemize}
+	\item bearer(s) between UE and source eNodeB
+	\item GTP tunnel(s) between	source eNodeB, S-GW and P-GW.
+\end{itemize}
+
+
+The figure \ref{fig:architecture-model} shows the elements involved in this
+handover procedure, how they are connected to each other and through which
+interfaces, figure \ref{fig:pre-handover-links} shows how data is transmitted
+before the start of the procedure.
+
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=1\linewidth]{img/pre-handhover-links.png}
+	\caption{LTE and UMTS networks before the handover.}
+  \label{fig:pre-handover-links}
+\end{figure}
 
 \begin{figure}[htb]
 	\centering
 	\includegraphics[width=1\linewidth]{img/architecture-reference.png}
+  \caption{non-roaming architecture for 3GPP accesses.}
 	\label{fig:architecture-model}
-	\caption{Architecture referece model (non-roaming architecture for 3GPP accesses)}
 \end{figure}
 
 
 \include{preparation}
 \include{execution}
+\include{reject}
 
 
 \begin{thebibliography}{99}
@@ -89,6 +169,22 @@ the RNC, the SGSN,
   \textit{P-GW Administration Guide, StarOS Release 20 - Direct Tunnel for 4G (LTE) Networks [Cisco ASR 5000 Series]}. [online]
   Available at: \url{https://www.cisco.com/c/en/us/td/docs/wireless/asr_5000/20/P-GW/b_20_PGW_Admin/b_20_PGW_Admin_chapter_011111.html}
   [Accessed 5 May 2018].
+
+  \bibitem{routing-area-update}
+  3GPP TS 23.401 (September 2011)
+  \textit{General Packet Radio Service (GPRS) Enhancements for Evolved Universal
+  Terrestrial Radio Access Network (E-UTRAN) Access},
+  Release 10,
+  sections 5.3.3.3, 5.3.3.6.
+
+  \bibitem{channels}
+  Poole, I. (n.d.).
+  \textit{LTE Physical, Logical and Transport Channels :: Radio-Electronics.Com}. [online]
+  Radio-electronics.com.
+  Available at: \url{http://www.radio-electronics.com/info/cellulartelecomms/lte-long-term-evolution/physical-logical-transport-channels.php}
+  [Accessed 16 May 2018].
+
+
 \end{thebibliography}
 
 
