@@ -104,6 +104,41 @@ INPUT /usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
 INPUT /usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
 INPUT /usr/share/texlive/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
+INPUT /usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
+INPUT /usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
+INPUT /usr/share/texlive/texmf-dist/tex/generic/babel-english/english.ldf
+INPUT /usr/share/texlive/texmf-dist/tex/generic/babel-english/english.ldf
+INPUT /usr/share/texlive/texmf-dist/tex/generic/babel/babel.def
+INPUT /usr/share/texlive/texmf-dist/tex/generic/babel-english/english.ldf
+INPUT /usr/share/texlive/texmf-dist/tex/generic/babel-english/english.ldf
+INPUT /usr/share/texlive/texmf-dist/tex/latex/biblatex/biblatex.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/biblatex/biblatex.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/biblatex/biblatex_.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/biblatex/biblatex_.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/logreq/logreq.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/logreq/logreq.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/logreq/logreq.def
+INPUT /usr/share/texlive/texmf-dist/tex/latex/logreq/logreq.def
+INPUT /usr/share/texlive/texmf-dist/tex/latex/biblatex/blx-dm.def
+INPUT /usr/share/texlive/texmf-dist/tex/latex/biblatex/blx-dm.def
+INPUT /usr/share/texlive/texmf-dist/tex/latex/biblatex/blx-compat.def
+INPUT /usr/share/texlive/texmf-dist/tex/latex/biblatex/blx-compat.def
+INPUT /usr/share/texlive/texmf-dist/tex/latex/biblatex/biblatex_.def
+INPUT /usr/share/texlive/texmf-dist/tex/latex/biblatex/biblatex_.def
+INPUT /usr/share/texlive/texmf-dist/tex/latex/biblatex/bbx/authoryear.bbx
+INPUT /usr/share/texlive/texmf-dist/tex/latex/biblatex/bbx/authoryear.bbx
+INPUT /usr/share/texlive/texmf-dist/tex/latex/biblatex/bbx/standard.bbx
+INPUT /usr/share/texlive/texmf-dist/tex/latex/biblatex/bbx/standard.bbx
+INPUT /usr/share/texlive/texmf-dist/tex/latex/biblatex/cbx/authoryear.cbx
+INPUT /usr/share/texlive/texmf-dist/tex/latex/biblatex/cbx/authoryear.cbx
+INPUT /usr/share/texlive/texmf-dist/tex/latex/biblatex/biblatex.cfg
+INPUT /usr/share/texlive/texmf-dist/tex/latex/biblatex/biblatex.cfg
+INPUT /usr/share/texlive/texmf-dist/tex/latex/biblatex/lbx/english.lbx
+INPUT /usr/share/texlive/texmf-dist/tex/latex/biblatex/lbx/english.lbx
+INPUT /usr/share/texlive/texmf-dist/tex/latex/biblatex/lbx/british.lbx
+INPUT /usr/share/texlive/texmf-dist/tex/latex/biblatex/lbx/british.lbx
 INPUT /media/telemaco/SD/Computer Networks/Assignement/main.aux
 INPUT /media/telemaco/SD/Computer Networks/Assignement/main.aux
 INPUT /media/telemaco/SD/Computer Networks/Assignement/activity-1.aux
@@ -143,6 +178,10 @@ INPUT /media/telemaco/SD/Computer Networks/Assignement/main.out
 INPUT /media/telemaco/SD/Computer Networks/Assignement/main.out
 OUTPUT /media/telemaco/SD/Computer Networks/Assignement/main.out
 OUTPUT /media/telemaco/SD/Computer Networks/Assignement/main.pdf
+OUTPUT /media/telemaco/SD/Computer Networks/Assignement/main.bcf
+INPUT /media/telemaco/SD/Computer Networks/Assignement/main.bbl
+INPUT /media/telemaco/SD/Computer Networks/Assignement/main.bbl
+INPUT /media/telemaco/SD/Computer Networks/Assignement/main.bbl
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr17.tfm
 INPUT /media/telemaco/SD/Computer Networks/Assignement/img/logo.png
 INPUT /media/telemaco/SD/Computer Networks/Assignement/img/logo.png
@@ -232,6 +271,8 @@ INPUT /media/telemaco/SD/Computer Networks/Assignement/appendix-A.aux
 INPUT /media/telemaco/SD/Computer Networks/Assignement/appendix-A.aux
 INPUT /media/telemaco/SD/Computer Networks/Assignement/main.out
 INPUT /media/telemaco/SD/Computer Networks/Assignement/main.out
+INPUT /media/telemaco/SD/Computer Networks/Assignement/main.run.xml
+OUTPUT /media/telemaco/SD/Computer Networks/Assignement/main.run.xml
 INPUT /usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc
 INPUT /usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb

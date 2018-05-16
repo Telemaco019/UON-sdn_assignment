@@ -15,6 +15,22 @@
 \hypersetup{urlcolor=blue}
 
 
+
+\usepackage[british,english]{babel}
+\usepackage[style=authoryear,dashed=false]{biblatex}
+\addbibresource{bibliography.bib}
+\renewcommand*{\nameyeardelim}{\addcomma\space}
+\renewcommand*{\bibfont}{\footnotesize}
+\setlength\bibitemsep{2\itemsep}
+\DeclareFieldFormat{urldate}{%
+  (Accessed: \thefield{urlday}\addspace%
+  \mkbibmonth{\thefield{urlmonth}}\addspace%
+  \thefield{urlyear}\isdot)
+}
+\DeclareFieldFormat{url}{Available at: \url{#1}}
+
+
+
 \definecolor{light-gray}{gray}{0.95}
 
 \lstset{
@@ -107,60 +123,9 @@ communication mechanism being necessary.
 \include{challenge}
 \include{appendix-A}
 
-\begin{thebibliography}{99}
-  \footnotesize
 
-  \bibitem{ref-7}
-  Allouzi, M. (2015),
-  \textit{Programming Assignment 2: Using Mininet and Mininet Python API: Instructions},
-  lecture notes,
-  Software defined networking Kent State University,
-  Available at: {\scriptsize \url{http://www.cs.kent.edu/~mallouzi/Software%20Defined%20Networking/Assignment2.pdf}}
+\clearpage
+\printbibliography
 
-  \bibitem{ref-2}
-  Blial, O., Ben Mamoun, M. and Benaini, R. (2016).
-  An Overview on SDN Architectures with Multiple Controllers.
-  \textit{Journal of Computer Networks and Communications}, pp.1-8.
-
-  \bibitem{ref-1}
-  Hai, N. and Kim, D. (2016).
-  Efficient load balancing for multi-controller in SDN-based mission-critical networks.
-  \textit{2016 IEEE 14th International Conference on Industrial Informatics (INDIN)}, pp.420-425
-
-  \bibitem{ref-9}
-  Phemius, K., Bouet, M. and Leguay, J. (2014).
-  DISCO: Distributed SDN controllers in a multi-domain environment.
-  \textit{2014 IEEE Network Operations and Management Symposium (NOMS)}.
-
-  \bibitem{ref-4}
-  GitHub. (n.d.).
-  \textit{Introduction to Mininet}. [online].
-  Available at: {\scriptsize \url{https://github.com/mininet/mininet/wiki/Introduction-to-Mininet#controllers}}
-  [Accesed 3 Apr. 2018].
-
-  \bibitem{ref-3}
-  GitHub. (2016).
-  \textit{mininet}. [online].
-  Available at: {\scriptsize \url{https://github.com/mininet/mininet/blob/master/examples/controllers2.py}}
-  [Accessed 28 Mar. 2018].
-
-  \bibitem{ref-6}
-  GitHub. (2016).
-  \textit{mininet}. [online].
-  Available at: {\scriptsize \url{https://github.com/mininet/mininet/blob/master/examples/controllers.py}}
-  [Accessed 28 Mar. 2018].
-
-  \bibitem{ref-8}
-   Wiki.opendaylight.org. (n.d.).
-   \textit{OpenDaylight OpenFlow Plugin::Mininet with multiple controllers}. [online].
-   Available at: {\scriptsize \url{https://wiki.opendaylight.org/view/OpenDaylight_OpenFlow_Plugin::Mininet_with_multiple_controllers}}
-   [Accessed 12 Apr. 2018].
-
-  \bibitem{ref-5}
-  GitHub. (2014).
-  \textit{Reg:Mininet with multiple external Remote controllers - Issue \#319}. [online].
-  Available at: {\scriptsize \url{https://github.com/mininet/mininet/issues/319}}
-  [Accessed 30 Mar. 2018]
-\end{thebibliography}
 
 \end{document}

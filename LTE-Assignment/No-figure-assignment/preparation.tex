@@ -1,23 +1,10 @@
 \section{Preparation phase}
-\begin{figure}[htb]
-	\centering
-	\includegraphics[width=1\linewidth]{img/preparation-phase.png}
-	\label{fig:preparation-phase}
-	\caption{the flow of the messages and the nodes involved in the
-	handover preparation phase}
-\end{figure}
-
 \subsection*{Step 1}
 The source eNodeB decides to initiate an Inter-RAT handover to the target access network.
 
 
 
 \subsection*{Step 2}
-\begin{figure}[htb]
-	\centering
-	\includegraphics[width=0.9\linewidth]{img/preparation-2.png}
-	\label{fig:2}
-\end{figure}
 The source eNodeB sends a \emph{Handover Required} message to the
 source MME, requesting the CN to establish resources in the target RNC and in the
 target SGSN. The message is sent through the S1 interface and it contains the
@@ -33,11 +20,6 @@ following parameters:
 
 
 \subsection*{Step 3}
-\begin{figure}[htb]
-	\centering
-	\includegraphics[width=0.9\linewidth]{img/preparation-3.png}
-	\label{fig:3}
-\end{figure}
 The source MME determines from the ``Target RNC Identifier'' field that
 the type of handover is intra-RAT Handover to UTRAN Iu mode and, if the CSG ID
 is included in the message, it checks the UE's CSG subscribtion. If the UE isn't
@@ -69,11 +51,6 @@ message through the S3 interface. Some of the parameters included in this messag
 
 
 \subsection*{Step 4}
-\begin{figure}[!htb]
-	\centering
-	\includegraphics[width=0.9\linewidth]{img/preparation-4.png}
-	\label{fig:5}
-\end{figure}
 The target SGSN establishes the EPS Bearer contexts indicated by the message
 received from the MME and deactivates the Bearer contexts which can't be
 estabilished.
@@ -104,7 +81,7 @@ RNC only accepts emergency bearers.
 \subsection*{Step 4a}
 For each accepted bearer, the target RNC allocates radio and Iu
 user plane resources. After that, the target RNC sends back to the SGSN the
-\emph{Relocation Request Acknowledge} messages, which contains a list of the
+\emph{Relocation Request Acknowledge} message, which contains a list of the
 setup bearers and a list of the failed to setup bearers, which will be deactivated
 by the SGSN.
 
@@ -113,14 +90,6 @@ PDUs\footnote{Packets received by a protocol layer are called SDU while packets
 output of a layer are called PDU.}
 from the S-GW (or from the target SGSN if Direct Tunnel is not used) for the
 accepted bearers.
-
-\begin{figure}[!htb]
-	\centering
-	\includegraphics[width=1\linewidth]{img/direct-tunnelling.png}
-	\label{fig:direct-tunnelling}
-	\caption{Direct tunnelling in a LTE network \protect\cite{direct-tunnelling}}
-\end{figure}
-
 
 
 %\subsection*{Step 6}
@@ -148,11 +117,6 @@ accepted bearers.
 
 
 \subsection*{Step 5}
-\begin{figure}[!htb]
-	\centering
-	\includegraphics[width=0.9\linewidth]{img/preparation-5.png}
-	\label{fig:7}
-\end{figure}
 The target SGSN sends the \emph{Forward Relocation Response} message
 to the source MME through the S3 interface. Some of the parameters contained in
 the message are:
@@ -171,11 +135,6 @@ the message are:
 
 
 \subsection*{Step 6}
-\begin{figure}[!htb]
-	\centering
-	\includegraphics[width=0.9\linewidth]{img/preparation-6.png}
-	\label{fig:8}
-\end{figure}
 If ``Indirect Forwarding'' applies, the Source MME sends the message \emph{Create
 Indirect Data Forwarding Tunnel Request} to the S-GW used for indirect forwarding.
 The parameters contained in the message are the list of ``Address(es) and TEID(s) for Data

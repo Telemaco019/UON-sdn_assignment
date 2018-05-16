@@ -8,58 +8,21 @@
 \usepackage{caption}
 \usepackage{graphicx}
 \usepackage{url}
-\usepackage[titletoc]{appendix}
 \usepackage{textcomp}
 \usepackage{pdfpages}
 \usepackage[colorlinks]{hyperref}
 \hypersetup{urlcolor=blue}
 
 
-\definecolor{light-gray}{gray}{0.95}
 
-\lstset{
- upquote=true,
- showspaces=false,
- showtabs=false,
- frame=none,
- tabsize=2,
- breaklines=true,
- numbers=none,
- showstringspaces=false,
- breakatwhitespace=true,
- escapeinside={(*@}{@*)},
- keywordstyle=\bfseries,
- basicstyle=\footnotesize\ttfamily,
-}
-
-\newcommand{\code}[1]{{\footnotesize\texttt{#1}}}
 
 \setlength\parindent{0pt} % Indentazione paragrafi
 \setlength{\parskip}{1ex plus 0.5ex minus 0.2ex} % Spaziatura paragrafi
 
-
-\title{
-  \includegraphics[width=0.8\textwidth]{img/logo.png}~ \\
-  Inter-RAT handover (E-UTRAN to UTRAN) \\ \large Computer Networks module - LTE assignment
-}
-\author{Michele Zanotti}
-\date{Spring term 2018}
-
-\pagestyle{fancy}
-\fancyhf{}
-\lhead{Computer Networks}
-\rhead{LTE assignment}
-\rfoot{\thepage}
-
-
 \begin{document}
 
 
-\maketitle
-\begin{figure}[htb]
-	\centering
-	\includegraphics[width=1\linewidth]{img/valuation-table.png}
-\end{figure}
+
 
 
 
@@ -144,19 +107,6 @@ handover procedure, how they are connected to each other and through which
 interfaces, figure \ref{fig:pre-handover-links} shows how data is transmitted
 before the start of the procedure.
 
-\begin{figure}[htb]
-	\centering
-	\includegraphics[width=1\linewidth]{img/pre-handhover-links.png}
-	\caption{LTE and UMTS networks before the handover.}
-  \label{fig:pre-handover-links}
-\end{figure}
-
-\begin{figure}[htb]
-	\centering
-	\includegraphics[width=1\linewidth]{img/architecture-reference.png}
-  \caption{non-roaming architecture for 3GPP accesses.}
-	\label{fig:architecture-model}
-\end{figure}
 
 
 \include{preparation}

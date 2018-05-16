@@ -3,11 +3,6 @@
 
 
 \subsection*{Step 1}
-\begin{figure}[!htb]
-	\centering
-	\includegraphics[width=0.9\linewidth]{img/execution-1.png}
-	\label{fig:exec-1}
-\end{figure}
 The source MME completes the preparation phase by sending to the source eNodeB
 the \emph{Handover command} message through the interface S1. The message
 contains the following parameters:
@@ -25,14 +20,7 @@ contains the following parameters:
 
 
 
-\clearpage
 \subsection*{Step 2}
-\begin{figure}[!htb]
-	\centering
-	\includegraphics[width=0.9\linewidth]{img/execution-2.png}
-	\label{fig:exec-2}
-\end{figure}
-
 The source eNodeB initiates data forwarding for bearers specified in the
 ``Bearers Subject to Data Forwarding List'' of the message received from the MME.
 
@@ -50,13 +38,7 @@ address} and has to suspend the uplink transmission of user data.
 
 
 
-\clearpage
 \subsection*{Step 3}
-\begin{figure}[!htb]
-	\centering
-	\includegraphics[width=0.9\linewidth]{img/execution-3.png}
-	\label{fig:exec-3}
-\end{figure}
 The UE executes the handover to the target UTRAN according to the prameters
 contained in the message received in step 2. At this point it can resume the user
 data transfer only for those NSAPIs which have been associated to a RAB, namely
@@ -64,13 +46,7 @@ the NSAPIs for which there are radio resources allocated in the target RNC.
 
 
 
-\clearpage
 \subsection*{Step 4}
-\begin{figure}[!htb]
-	\centering
-	\includegraphics[width=0.9\linewidth]{img/execution-4.png}
-	\label{fig:exec-4}
-\end{figure}
 After the RNC-ID and the S-RNTI\footnote{In UMTS the S-RNTI is the UE identifier which is allocated
 by the RNC and it's unique within that RNC} are exchanged with the UE, the target
 RNC sends the \emph{Relocation Complete} message to the target SGSN, indicating
@@ -80,13 +56,7 @@ the target RNC.
 
 
 
-\clearpage
 \subsection*{Step 5}
-\begin{figure}[!htb]
-	\centering
-	\includegraphics[width=0.9\linewidth]{img/execution-5.png}
-	\label{fig:exec-5}
-\end{figure}
 The target SGSN informs the source MME that the UE has arrived to the target side
 (UMTS network) by sending the Forward Relocation Complete Notification message.
 
@@ -102,13 +72,7 @@ for indirect forwarding (see step 9).
 
 
 
-\clearpage
 \subsection*{Step 6}
-\begin{figure}[!htb]
-	\centering
-	\includegraphics[width=0.9\linewidth]{img/execution-6.png}
-	\label{fig:exec-6}
-\end{figure}
 The SGSN informs the S-GW that now the SGSN is responsible for all the EPS Bearer
 contexts that the UE has established by sending to it a Modify Bearer request per
 each PDN connection. The message contains the following parameters:
@@ -132,26 +96,11 @@ packet and does not send a Downlink Data Notification to the SGSN. ???
 
 
 \subsection*{Step 7}
-\begin{figure}[!htb]
-	\centering
-	\includegraphics[width=0.9\linewidth]{img/execution-7.png}
-	\label{fig:exec-7}
-\end{figure}
 The S-GW sends to the SGSN the Modify Bearer Response message for acknowledging
 the user plane switch to the target SGSN.
 
 After this step the user data path is finally established and it's shown in
 figure \ref{fig:final-data-path}.
-
-\begin{figure}[!htb]
-	\centering
-	\includegraphics[width=0.9\linewidth]{img/final-data-path.png}
-	\caption{The user data path after the step 7. In this case it is assumed that
-	direct tunnel is not used, therefore the link between the RNC and the S-GW passes
-	through the SGSN. If direct tunnel is instad used then the data go straight
-	from the RNC to the S-GW.}
-	\label{fig:final-data-path}
-\end{figure}
 
 
 
@@ -170,8 +119,3 @@ Tracking Area Update procedure in LTE and it's described in reference
 If indirect forwarding was used then when the timer started by the MME at step 5
 expires the MME sends a Delete Indirect Data Forwarding Tunnel Request message
 to the S-GW for releasing the temporary resources used for indirect forwarding.
-\begin{figure}[!htb]
-	\centering
-	\includegraphics[width=0.9\linewidth]{img/execution-9.png}
-	\label{fig:exec-9}
-\end{figure}
